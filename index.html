@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilo.css">
   <title>Registro</title>
+  <link rel="icon" href="2.ico" type="image/png">
+
 </head>
 
 <body>
@@ -29,27 +32,27 @@
     <div class="form-box login">
 
 
-      <form action="#">
+      <form action="apk.php" method="post">
         <h2>Login</h2>
         <div class="input-box">
           <span class="icon">
             <ion-icon name="mail"></ion-icon>
           </span>
-          <input type="email" required>
+          <input type="email" name="correo" required >
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon">
             <ion-icon name="lock-closed"></ion-icon>
           </span>
-          <input type="password" required>
+          <input type="password" name="pass" required>
           <label>Contraseña</label>
         </div>
         <div class="recuerdame">
           <label> <input type="checkbox">Recuerdame</label>
           <a href="#">Olvidaste tu contraseña?</a>
         </div>
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn" name="btnlogin">Login</button>
         <div class="login-register">
           <p>No tienes una cuenta? <a href="#" class="link-registro">Crear una cuenta</a></p>
         </div>
@@ -59,34 +62,34 @@
     <div class="form-box Registro">
 
 
-      <form action="#">
+      <form action="apk.php" method="post">
         <h2>Registro</h2>
         <div class="input-box">
           <span class="icon">
             <ion-icon name="person"></ion-icon>
           </span>
-          <input type="text" required>
+          <input type="text" name="Usuario" required>
           <label>Nombre de usuario</label>
         </div>
         <div class="input-box">
           <span class="icon">
             <ion-icon name="mail"></ion-icon>
           </span>
-          <input type="email" required>
+          <input type="email" name="correoreg" required>
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon">
             <ion-icon name="lock-closed"></ion-icon>
           </span>
-          <input type="contraseña" required>
+          <input type="password" name="passreg" required>
           <label>Contraseña</label>
         </div>
         <div class="recuerdame">
           <label> <input type="checkbox">Acepto los terminos y condiciones</label>
 
         </div>
-        <button type="submit" class="btn">Registrar</button>
+        <button type="submit" class="btn" name="btnregistrar">Registrar</button>
         <div class="login-register">
           <p>Tienes una cuenta? <a href="#" class="link-iniciar">Login</a></p>
         </div>
@@ -101,5 +104,7 @@
 </body>
 
 </html>
+
+
 
 
