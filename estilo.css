@@ -98,7 +98,8 @@ margin-left: 40px;
 
 /*modifica todo el login*/
 .login {
-    margin-left: 55%;
+  margin-left: 36%;
+  margin-top: 7%;
   position: relative;  
   width: 26%;
   height: 73vh;
@@ -117,6 +118,14 @@ margin-left: 40px;
 
 .login.active-popup{
     transform: scale(1);
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
 }
 /*esto es lo que pasa cuando le das a crear una cuenta*/
 .login.active {
