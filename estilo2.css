@@ -3,14 +3,14 @@ html{
     height: 100%;
 }
 
-body{
-    
-   
-    min-height: 100px;
+body{    
+    perspective:500px;height:90vh;
     background: url(cabecera-stocks-blog-seas.jpg) repeat-y;
     background-size:cover;
-    width: 100%;
-    height: 100%;
+    
+    
+
+  
 
 }
 * {
@@ -21,25 +21,75 @@ body{
 }
 
 .div1{
-    height: 100px;
-    width: 100px;
-
+   
+    top: 2%;
     display:flex;
         justify-content: center;
         align-items: center;
+        box-sizing: border-box;
+
+        position:absolute;
+  width :20vw;
+  height:20vw;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  top:50%; left:50%;
+  margin-top: -10vw;
+  margin-left: -10vw;
+  animation: rotar3d 25s linear infinite;
+  line-height: 20vw;
+  font-size: 10vw;
         
         
 }
 
 #div11 {
-    display: grid;
     height: 100%;
     width: 300px;
     background-color:red;
+    
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 #div12{
     height: 100%;
     width: 300px;
     background-color:blue;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#div13{
+    height: 100%;
+    width: 300px;
+    background-color: blueviolet;
+
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#div14{
+    height: 100%;
+    width: 300px;
+    background-color: aliceblue;
+    border: 10px solid black;
+    filter:alpha (opacity=70); -moz-opacity:.70;opacity: .888; 
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: inset;
+  
+}
+#div141{
+    height: 100%;
+    width: 100%;
+    background-color:yellow;
 }
