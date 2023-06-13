@@ -25,6 +25,44 @@
     </nav>
   </header>
   <!--basicamente los datos para logearte -->
+ 
+    <!--esto es para crear una cuenta-->
+    <div class="form-box Registro">
+
+
+      <form action="apk.php" method="post">
+        <h2>Registrarse</h2>
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <input type="text" name="Usuario" required>
+          <label>Nombre de usuario</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="mail"></ion-icon>
+          </span>
+          <input type="email" name="correoreg" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          
+          <input type="password" name="passreg" required>
+          <label>Contraseña</label>
+        </div>
+        <div class="recuerdame">
+          <label> <input type="checkbox">Acepto los terminos y condiciones</label>
+
+        </div>
+        <button type="submit" class="btn" name="btnregistrar">Registrar</button>
+        <div class="login-register">
+        
+        </div>
+      </form>
+    </div>
+  </div>
+
   <div class="login">
     
     <div class="form-box login">
@@ -56,42 +94,6 @@
         </div>
       </form>
     </div>
-    <!--esto es para crear una cuenta-->
-    <div class="form-box Registro">
-
-
-      <form action="apk.php" method="post">
-        <h2>Registro</h2>
-        <div class="input-box">
-          <span class="icon">
-            <ion-icon name="person"></ion-icon>
-          </span>
-          <input type="text" name="Usuario" required>
-          <label>Nombre de usuario</label>
-        </div>
-        <div class="input-box">
-          <span class="icon">
-            <ion-icon name="mail"></ion-icon>
-          </span>
-          <input type="email" name="correoreg" required>
-          <label>Email</label>
-        </div>
-        <div class="input-box">
-          
-          <input type="password" name="passreg" required>
-          <label>Contraseña</label>
-        </div>
-        <div class="recuerdame">
-          <label> <input type="checkbox">Acepto los terminos y condiciones</label>
-
-        </div>
-        <button type="submit" class="btn" name="btnregistrar">Registrar</button>
-        <div class="login-register">
-          <p>Tienes una cuenta? <a href="#" class="link-iniciar">Iniciar Sesión</a></p>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
   <!-- instalacion para poder poner iconos-->
