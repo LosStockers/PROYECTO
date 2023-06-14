@@ -97,10 +97,10 @@ margin-left: 40px;
 }
 
 /*modifica todo el login*/
-.login {
+.Registro {
   
   position: relative;  
-  width: 26%;
+  width: 25%;
   height: 90%;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 5);
@@ -113,6 +113,12 @@ margin-left: 40px;
   overflow: hidden; 
   transition: .5s .2s ease;
 
+}
+
+
+.login .form-box.login{
+    position: absolute;
+    transform: translateX(400px);
 }
 
 .login.active-popup{
