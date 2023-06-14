@@ -8,21 +8,27 @@
   .square1 {
     width: 250px;
     height: 400px;
-    background-color: red;
+    background-image: url(3034715\ -\ CliffSide\ Cordie\ Mangamaster\ edit.png);
     margin: 10px;
+    background-size: cover;
+    background-position: center;
   }
   .square2 {
     width: 250px;
     height: 400px;
-    background-image: url(LOGITOCOSITO\ Y\ YO\ QUE\ SE.png);
+    background-image: url(7ec4fb3f51ddf1936b36b74b7838a4c8.png);
     margin: 10px;
+    background-size: cover;
+    background-position: center;
 
   }
   .square3 {
     width: 250px;
     height: 400px;
-    background-color: rgb(115, 255, 0);
+    background-image: url(IMG_20200502_210247_334.jpg);
     margin: 10px;
+    background-size: cover;
+    background-position: center;
   }
 
   body{
