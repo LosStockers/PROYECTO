@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .square1 {
+    width: 250px;
+    height: 400px;
+    background-color: red;
+    margin: 10px;
+  }
+  .square2 {
+    width: 250px;
+    height: 400px;
+    background-image: url(LOGITOCOSITO\ Y\ YO\ QUE\ SE.png);
+    margin: 10px;
+
+  }
+  .square3 {
+    width: 250px;
+    height: 400px;
+    background-color: rgb(115, 255, 0);
+    margin: 10px;
+  }
+
+  body{
+     background-image: url(cabecera-stocks-blog-seas.jpg);
+    } 
+
+
+
