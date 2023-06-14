@@ -1,40 +1,11 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .square1 {
+/*.back1 {
     width: 250px;
     height: 400px;
-    background-image: url(3034715\ -\ CliffSide\ Cordie\ Mangamaster\ edit.png);
+    background-color: blue;
     margin: 10px;
     background-size: cover;
     background-position: center;
-  }
-  .square2 {
-    width: 250px;
-    height: 400px;
-    background-image: url(7ec4fb3f51ddf1936b36b74b7838a4c8.png);
-    margin: 10px;
-    background-size: cover;
-    background-position: center;
-
-  }
-  .square3 {
-    width: 250px;
-    height: 400px;
-    background-image: url(WhatsApp\ Image\ 2021-02-20\ at\ 21.10.38.jpeg);
-    margin: 10px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  body{
-     background-image: url(cabecera-stocks-blog-seas.jpg);
-    
-
-  }
-
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);  
+}*/
 

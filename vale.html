@@ -3,24 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>este es intento</title>
+    <title>Document</title>
     <link rel="stylesheet" href="vale.css">
-
-    <head>
-        <style>
-         
-        </style>
-      </head>
 </head>
-<body>
+<body> 
 
-  <div class="container">
-    <div class="square1"></div>
-    <div class="square2"></div>
-    <div class="square3"></div>
-  </div>
+  <style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(cabecera-stocks-blog-seas.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(89, 89, 197);
+        margin: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+      
+      .box:hover {
+        transform: scale(1.2);
+      }
+      
+      .box-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 16px;
+        text-align: center;
+      }
+    .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" onclick="showText(this)">
+        <div class="box-text hidden">Texto 1</div>
+      </div>
+      <div class="box" onclick="showText(this)">
+        <div class="box-text hidden">Texto 2</div>
+      </div>
+      <div class="box" onclick="showText(this)">
+        <div class="box-text hidden">Texto 3</div>
+      </div>
+    </div>
 
-
-</html>
+  
+    <script>
+      function showText(element) {
+        element.querySelector(".box-text").classList.toggle("hidden");
+      }
+    </script>
 </body>
 </html>
