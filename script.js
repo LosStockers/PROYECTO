@@ -13,5 +13,5 @@ Botoniniciar.addEventListener('click', () => {
 
 //esto es para iniciar sesion (usable en css)
 registerLink.addEventListener('click', () => {
-  Registro.classList.remove('active');
+  Registro.classList.remove('active-popup');
 });
