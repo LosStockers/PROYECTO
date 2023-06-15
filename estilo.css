@@ -96,12 +96,12 @@ margin-left: 40px;
     color: black ;
 }
 
-/*modifica todo el login*/
+/*modifica todo el Registro*/
 .Registro {
   
   position: relative;  
-  width: 25%;
-  height: 90%;
+  width: 400px;
+  height: 550px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 5);
   border-radius: 15px;
@@ -115,15 +115,32 @@ margin-left: 40px;
 
 }
 
+.Registro .form-box.Registro{
+   transition: .18s ease;
+   transform: translateX(0);
+}
 
-.login .form-box.login{
+.Registro.active-popup .form-box.login{
+transition: .18s ease;
+transform: translateX(0);
+}
+
+
+.Registro .form-box.login{
     position: absolute;
+    transition: none ;
     transform: translateX(400px);
 }
 
-.login.active-popup{
-    transform: scale(1);
+.Registro.active-popup{
+    height: 440px;
 }
+
+.Registro.active-popup .form-box.Registro{
+    position: absolute;
+    transform: translateX(-400px);
+}
+
 
 .infos{
     display: flex;
@@ -182,9 +199,9 @@ margin-left: 40px;
     display: flex;
    transition: transform .18s ease;
    transform: translateX(0);
-   position: absolute;
+   position: relative;
   padding: 0;
-   margin: 0;
+   margin-left:38% ;
 }
 /*esto seria para llamar a la ventana de login*/
 .login.active .form-box.login{
@@ -192,10 +209,9 @@ margin-left: 40px;
     transform: translateX(-400px);
 }
 /*esto es basicamente para posicionar la ventana de registro*/
-.login .form-box.Registro {
+.Registro .form-box.Registro {
     position: absolute;
     transition: none;
-    transform: translateX(400px);
 }
 /*esto es lo que pasa cuando le das a crear una cuenta*/
 .login.active .form-box.Registro {
