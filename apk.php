@@ -1,58 +1,60 @@
 <?php
+//No se como funciona ni si los hace
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "Login/Registro";
+include('conexion.php');
 
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+$usuario = $_POST["Usuario"];
+$email = $_POST["correo"]; 
+$pass = $_POST["pass"];
 
-if (!$conn){
-    die("No hay sistema mi estimado " .mysqli_connect_error()); 
+//Para iniciar sesión
+if(isset($_POST["btnlogin"]))
+{
+
+$queryusuario = mysqli_query($conn,"SELECT * FROM login WHERE Email = '$email'");
+$nr 		= mysqli_num_rows($queryusuario); 
+$mostrar	= mysqli_fetch_array($queryusuario); 
+	
+if (($nr == 1) && (password_verify($pass,$mostrar['Contraseña'])) )
+	{ 
+		session_start();
+		$_SESSION['nombredelusuario']=$usuario;
+		header("Location: test.html");
+	}
+else
+	{
+	echo "<script> alert('Usuario o contraseña incorrecto.');window.location= 'index.html' </script>";
+	}
 }
 
-// Login
-if (isset($_POST["btnlogin"])) {
-    $email = $_POST["correo"]; 
-    $pass = $_POST["pass"];
+//Para registrar
+if(isset($_POST["btnregistrar"]))
+{
 
-    $query = mysqli_query($conn, "SELECT * FROM Login WHERE Email = '$email' AND Contraseña = '$pass'");
-    $nfila = mysqli_num_rows($query);
+$queryusuario 	= mysqli_query($conn,"SELECT * FROM login WHERE Usuario = '$usuario'");
+$nr 			= mysqli_num_rows($queryusuario); 
 
-    if ($nfila == 1) {
-        echo "<script> alert('Bienvenido'); window.location='Test.html'; </script>";
-    } else {
-        echo "<script> alert('Email o contraseña incorrecta'); window.location='index.html'; </script>";
-    }
+if ($nr == 0)
+{
+
+	$pass_fuerte = password_hash($pass, PASSWORD_BCRYPT);
+	$queryregistrar = "INSERT INTO login(Usuario, Email, Contraseña) values ('$usuario','$email''$pass_fuerte')";
+	
+
+if(mysqli_query($conn,$queryregistrar))
+{
+	echo "<script> alert('Usuario registrado: $usuario');window.location= 'test.html' </script>";
+}
+else 
+{
+	echo "Error: " .$queryregistrar."<br>".mysqli_error($conn);
 }
 
-// Register
-if (isset($_POST["btnregistrar"])) {
-    $usuario = $_POST["Usuario"];
-    $emailreg = $_POST["correoreg"]; 
-    $passreg = $_POST["passreg"];
-
-    // Consulta para verificar si el correo electrónico ya existe
-    $query = mysqli_query($conn, "SELECT COUNT(*) AS count FROM Login WHERE Email = '$emailreg'");
-    $result = mysqli_fetch_assoc($query);
-    $count = $result['count'];
-
-    if ($count > 0) {
-        // El correo electrónico ya existe en la base de datos
-        // Puedes mostrar un mensaje de error o redirigir al usuario a otra página
-        echo "<script> alert('El correo electrónico ya está registrado. Por favor, utiliza otro correo electrónico.'); window.location='index.html'; </script>";
-        
-        
-
-    }
-
-    $sqlgrabar = "INSERT INTO Login(Email, Contraseña, Usuario) VALUES ('$emailreg', '$passreg', '$usuario')";
-
-    if (mysqli_query($conn, $sqlgrabar)) {
-        echo "<script> alert('Registro exitoso'); window.location='Test.html'; </script>";
-    } else {
-        echo "Error: " . $sqlgrabar . "<br>" . mysqli_error($conn);
-    }
+}else
+{
+		echo "<script> alert('No puedes registrar a este usuario: $usuario');window.location= 'index.html' </script>";
 }
+
+} 
 
 ?>
