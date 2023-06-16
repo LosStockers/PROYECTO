@@ -65,9 +65,20 @@ html,body{
     background-size: cover;
     background-position: center;
     width: 100%;
+  
 
   }
- 
+.todo {
+  width: 200px;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+ #todo:hover{
+  transform: scale(1.1);
+ }
+
+
 
 .content{
     width: 250px;
