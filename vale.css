@@ -53,8 +53,8 @@ html,body{
   }
 
   .image {
-    order: 3;
-    margin-left: auto;
+    display: flex;
+    justify-content: center;
   }
 
 #cuerpo {
