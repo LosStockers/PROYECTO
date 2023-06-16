@@ -22,6 +22,7 @@ html,body{
 #cabeza {
     height: 7%;
     width: 100%;
+    
 }
 
 .header {
@@ -52,10 +53,7 @@ html,body{
     height: 40px;
   }
 
-  .image {
-    display: flex;
-    justify-content: center;
-  }
+
 
 #cuerpo {
     display: flex;
@@ -82,9 +80,9 @@ html,body{
     text-align: center;
 }
 
-#info1 {     background: linear-gradient(to bottom, #b93100, #ff9500);}
-#info2 {     background: linear-gradient(to bottom, #b93100, #ff9500);}
-#info3 {     background: linear-gradient(to bottom, #b93100, #ff9500);}
+#info1 {       background: linear-gradient(to top, #ffffffc6, #848484);}
+#info2 {       background: linear-gradient(to top, #ffffffc6, #848484);}
+#info3 {       background: linear-gradient(to top, #ffffffc6, #848484);}
 
 
 
