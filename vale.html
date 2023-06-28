@@ -7,80 +7,37 @@
     <link rel="stylesheet" href="vale.css">
 </head>
 <body> 
-  
-  
   <div id="base">
-  <div id="cabeza">
-
-    <header>
-      <button class="back-button">Atrás</button>
-      <div class="logo">
-        <img src="LOGITOCOSITO Y YO QUE SE.png" alt="Logo de la empresa" class="logopadre"> 
+    <div id="cabeza">
+      <header>
+        <div class="logo">
+          <a href="inicio.html">
+            <img src="LOGITOCOSITO Y YO QUE SE.png" alt="Logo">
+          </a>
+        </div>
+        <div class="buttons">
+          <a href="atras.html" class="back-button">Atrás</a>
+          <button disabled>Botón 1</button>
+          <button disabled>Botón 2</button>
+        </div>
+      </header>
+    </div>
+    <div id="cuerpo">
+      <div class="todo">
+        <a href="pagos.html" class="button left">+</a>
+        <div class="gestor-info">
+          <h2>mueve el toto</h2>
+          <div class="gestor-img">
+            <img src="fabuloso.jpg" alt="Imagen del Gestor">
+          </div>
+          <p>mueve el to to to to to to</p>
+        </div>
+        <a href="pagos.html" class="button right">+</a>
       </div>
-      <button class="usuario"></button>
-    
-    </header>
-  
-  </div>
-
-
-
-<div id="cuerpo" >
-
-<div class="todo">
-
- <div class="content" id="info">
-   <h2>Cajas de caja</h2>
-    <img src="fabuloso.jpg" alt="Imagen" width="200" height="200">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. De</p>
-  </div>
-  
-  <div class="content" id="info">
-    <h2>Cajas de caja</h2>
-    <img src="fabuloso.jpg" alt="Imagen" width="200" height="200">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. De</p>
-  </div>
-
-  <div class="content" id="info">
-    <h2>Cajas de caja</h2>
-    <img src="fabuloso.jpg" alt="Imagen" width="200" height="200">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. De</p>
-  </div>
-
-
-</div>
-
-  </div>
-
-
-
-<!--
-  <div class="container">
-    <div class="content" id="info">
-      <h2>Cajas de caja</h2>
-      <img src="cabecera-stocks-blog-seas.jpg" alt="Imagen" width="200" height="200">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. De</p>
+      
     </div>
   </div>
-
-  <script>
-    let isFlipped = false;
-
-    function showInfo() {
-      const container = document.querySelector('.container');
-      const content = document.querySelector('.content');
-
-      if (isFlipped) {
-        container.style.transform = 'rotateY(0deg)';
-        content.classList.remove('active');
-      } else {
-        container.style.transform = 'rotateY(180deg)';
-        content.classList.add('active');
-      }
-
-      isFlipped = !isFlipped;
-    }
-  </script> -->
-</div>
+  <script src="script.js"></script>
 </body>
 </html>
+

@@ -9,84 +9,119 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);  
 }*/
 
-html,body{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+#base {
+  flex: 1;
+}
 
 #cabeza {
-    height: 7%;
-    width: 100%;
-    
+  background-color: #f2f2f2;
+  padding: 10px;
 }
 
-
-.imagen{
-    height: 30%;
-    margin-bottom: 40%;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-  .back-button {
-    order: 1;
-    margin-right: 20px;
-  }
+.logo img {
+  height: 50px;
+}
 
-  .logo {
-    order: 2;
-    flex-grow: 1;
-    text-align: center;
-  }
+.buttons {
+  display: flex;
+  gap: 10px;
+}
 
-  .logo img {
-    height: 40px;
-  }
+.back-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
 
-
+.gestor-info {
+  width: 250px;
+  height: 400px;
+  background: linear-gradient(to bottom, #ccc, #f2f2f2);
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative; /* Agregamos posición relativa para el contenedor */
+}
 
 #cuerpo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 93%;
-    margin: 0;
-    background-image: url(cabecera-stocks-blog-seas.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-  
-
-  }
-
-.content{
-    width: 250px;
-    height: 400px;
-    margin: 10px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);  
-    text-align: center;
-   
-}
-
-#info {       background: linear-gradient(to top, #ffffffc6, #848484);
-              
-
-}
-
-.todo{
-  width: 50%;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background-image: url(cabecera-stocks-blog-seas.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 93%;
+  overflow: hidden;
 }
 
-.logopadre{
-  margin-right: 3%;
-  margin-bottom: 1%;
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
- 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #5f735f;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  margin: 0 10px; /* Añadimos margen a izquierda y derecha */
+  text-decoration: none;
+}
+
+.gestor-info h2 {
+  color: white;
+  font-size: 24px;
+}
+
+.gestor-img {
+  margin-bottom: 10px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.gestor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
