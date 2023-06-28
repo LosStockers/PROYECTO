@@ -51,7 +51,7 @@ header {
 }
 
 .back-button {
-  background-color: #ff0000;
+  background-color: #261616;
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
@@ -61,17 +61,17 @@ header {
 .gestor-info {
   width: 250px;
   height: 400px;
-  background: linear-gradient(to bottom, #ccc, #f2f2f2);
+  background: linear-gradient(to bottom, #4a4b4ae7, #222325ec);
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   margin-bottom: 20px;
-  position: relative; /* Agregamos posición relativa para el contenedor */
+  position: relative; 
 }
 
 #cuerpo {
@@ -79,12 +79,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(cabecera-stocks-blog-seas.jpg);
+  background-image: url(zyro-image.png);
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 93%;
   overflow: hidden;
+  
 }
 
 .todo {
@@ -97,13 +98,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #5f735f;
-  color: white;
+  width: 75px;
+  height: 75px;
+  background-color: #292b2ac8;
+  color: rgb(255, 255, 255);
   font-size: 24px;
   border-radius: 50%;
-  margin: 0 10px; /* Añadimos margen a izquierda y derecha */
+  margin: 0 10px;
   text-decoration: none;
 }
 
