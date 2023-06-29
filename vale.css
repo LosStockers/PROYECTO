@@ -126,3 +126,34 @@ header {
   height: 100%;
   object-fit: cover;
 }
+
+
+.gestor-info {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #333333fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h2 {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.info {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
