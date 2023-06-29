@@ -30,7 +30,7 @@ header {
     width: 100%;
     height: 10%;
     padding: 20px 100px;
-    background:linear-gradient(to right, rgba(255, 255, 255, 0.815), rgb(0, 0, 0));
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +39,7 @@ header {
 
 /* modificaiones del logo*/
 .logo {
-  width: 14%;;
+    width: 20%;
 
 }
 /* modificaciones de la navegacion*/
@@ -144,15 +144,16 @@ transform: translateX(0);
 .infos{
     display: flex;
     flex-direction: column;
-    width: 300%;
-    height: 300%;
-    margin-top: 100%;
+    width: 70%;
+    height: 150%;
+    margin-top: 40%;
+    
 }
 
 .info{
    
     position: relative;  
-    width: 20%;
+    width: 90%;
     height: 50%;
     background: transparent;
     background-color: rgba(0, 0, 0, 0.9);
@@ -164,14 +165,14 @@ transform: translateX(0);
     transition: .5s .2s ease;
     color: aliceblue;
     font-size: 200%;
-  
+    
    
     
 }
 .info2{
     position: relative;  
-    width: 50%;
-    height: 50%;
+    width: 135%;
+    height: 40%;
     background: transparent;
     background-color: rgba(0, 0, 0, 0.9);
     border: 2px solid rgba(255, 255, 255, 5);
