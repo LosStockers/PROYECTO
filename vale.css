@@ -59,8 +59,8 @@ header {
 }
 
 .gestor-info {
-  width: 250px;
-  height: 400px;
+  width: 350px;
+  height: 600px;
   background: linear-gradient(to bottom, #4a4b4ae7, #222325ec);
   margin: 10px;
   border-radius: 10px;
@@ -114,11 +114,13 @@ header {
 }
 
 .gestor-img {
-  margin-bottom: 10px;
-  width: 200px;
-  height: 200px;
+  width: 75%;
+  height: 40%;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  
 }
 
 .gestor-img img {
@@ -143,6 +145,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
 }
 
 .header h2 {
