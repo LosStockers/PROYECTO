@@ -44,7 +44,8 @@ CREATE TABLE Elemento (
     SubFamilia varchar(35),                    -- Campo para almacenar la subfamilia a la que pertenece el elemento.
     Familia varchar(35),                       -- Campo para almacenar la familia a la que pertenece el elemento.
     Negocio varchar(35),                       -- Campo para almacenar el nombre del negocio al que pertenece el elemento.
-    ArchivoImagen varchar(40)                  -- Campo para almacenar el nombre del archivo de imagen asociado al elemento.
+    ArchivoImagen varchar(40),                  -- Campo para almacenar el nombre del archivo de imagen asociado al elemento.
+    /*ProveedorID int(8)*/
 );
 
 -- Tabla "Tiene" para registrar fechas asociadas a elementos
@@ -59,3 +60,13 @@ CREATE TABLE Nota (
     ID int(8) PRIMARY KEY,                    -- Campo para almacenar el ID de la nota. Es la clave primaria.
     Descripcion varchar(50)                   -- Campo para almacenar la descripción de la nota.
 );
+
+/*
+CREATE TABLE Proveedor (
+    ID int(8) PRIMARY KEY AUTO_INCREMENT,          -- Campo para almacenar un ID único para cada proveedor.
+    NombreEmpresa varchar(50) NOT NULL,            -- Campo para almacenar el nombre de la empresa proveedora. No puede ser nulo.
+    Contacto varchar(50),                          -- Campo para almacenar el nombre de la persona de contacto en la empresa.
+    CorreoContacto varchar(50),                    -- Campo para almacenar el correo de contacto de la persona en la empresa.
+    TelefonoContacto varchar(20)                   -- Campo para almacenar el número de teléfono de contacto de la persona en la empresa.
+);
+*/
