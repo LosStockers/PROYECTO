@@ -1,191 +1,121 @@
-/* Estilos generales */
+
 body {
-    /* Configuración del fondo, márgenes, etc. */
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url(cabecera-stocks-blog-seas.jpg);
-  }
-  
-  /* Estilos para la cabecera */
-  .cabecera {
-    /* Configuración del fondo, colores, márgenes, etc. */
-    background-color: #333333;
-    color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo img {
-    /* Estilos del logo */
-    max-width: 150px;
-  }
-  
-  .menu ul {
-    /* Estilos del menú de navegación */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    /* Estilos de los elementos del menú */
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  .menu li:last-child {
-    /* Estilos del último elemento del menú */
-    margin-right: 0;
-  }
-  
-  .menu a {
-    /* Estilos de los enlaces del menú */
-    color: #ffffff;
-    text-decoration: none;
-    padding: 5px 10px;
-  }
-  
-  .menu a:hover {
-    /* Estilos de los enlaces del menú al pasar el cursor sobre ellos */
-    background-color: #ffffff;
-    color: #333333;
-    border-radius: 4px;
-  }
-  
-  /* Estilos para el contenido de la página */
-  .contenido {
-    /* Configuración del contenido, márgenes, etc. */
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .info-izquierda {
-    /* Estilos para el bloque de información de la izquierda */
-    flex: 1;
-    text-align: left;
-    background-color: #333333c2;
-    padding: 20px;
-    border-radius: 8px;
-    color: #ffffff;
-  }
-  
-  .info-izquierda h1 {
-    /* Estilos para el título */
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-  
-  .info-izquierda p {
-    /* Estilos para el texto de información */
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  /* Estilos para los formularios */
-  .formularios {
-    /* Configuración del contenedor de los formularios */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  
-  .formulario-inicio-sesion,
-  .formulario-crear-cuenta {
-    /* Estilos para los formularios */
-    flex: 1;
-    max-width: 400px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .formulario-inicio-sesion h2,
-  .formulario-crear-cuenta h2 {
-    /* Estilos para los títulos de los formularios */
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .formulario-inicio-sesion form,
-  .formulario-crear-cuenta form {
-    /* Estilos para los formularios y sus elementos */
-    text-align: left;
-  }
-  
-  .formulario-inicio-sesion label,
-  .formulario-crear-cuenta label {
-    /* Estilos para las etiquetas de los formularios */
-    display: block;
-    text-align: left;
-  }
-  
-  .formulario-inicio-sesion input,
-  .formulario-crear-cuenta input {
-    /* Estilos para los campos de entrada */
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .formulario-inicio-sesion .opciones,
-  .formulario-crear-cuenta .opciones {
-    /* Estilos para las opciones adicionales (por ejemplo, "Recordarme" en el formulario de inicio de sesión) */
-    text-align: left;
-    margin-bottom: 15px;
-  }
-  
-  .formulario-inicio-sesion button,
-  .formulario-crear-cuenta button {
-    /* Estilos para los botones */
-    background-color: #4f4f4f;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .formulario-inicio-sesion button:hover,
-  .formulario-crear-cuenta button:hover {
-    /* Estilos para los botones al pasar el cursor sobre ellos */
-    background-color: #45a049;
-  }
-  
-  /* Animaciones */
-  @keyframes mostrarFormulario {
-    from {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes girarFormulario {
-    from {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-  }
+  /* Configuración del fondo, márgenes, etc. */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(cabecera-stocks-blog-seas.jpg);
+}
+
+/* Estilos para la cabecera */
+.cabecera {
+  /* Configuración del fondo, colores, márgenes, etc. */
+  background-color: #333333;
+  color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  /* Estilos del logo */
+  max-width: 150px;
+}
+
+.menu ul {
+  /* Estilos del menú de navegación */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  /* Estilos de los elementos del menú */
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  /* Estilos del último elemento del menú */
+  margin-right: 0;
+}
+
+.menu a {
+  /* Estilos de los enlaces del menú */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.menu a:hover {
+  /* Estilos de los enlaces del menú al pasar el cursor sobre ellos */
+  background-color: #ffffff;
+  color: #333333;
+  border-radius: 4px;
+}
+
+/* Estilos para el contenido de la página */
+.contenido {
+  /* Configuración del contenido, márgenes, etc. */
+
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Estilos para la información de la izquierda */
+.info-izquierda {
  
+  text-align: left;
+  background-color: #333333c2;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 70%;
+  height: 30%;
+}
+#img1 {
+  width: 35%;
+  height: 70%;
+  background-image: url(cabecera-stocks-blog-seas.jpg);
+}
+#img2 {
+  width: 35%;
+  height: 70%;
+  background-image: url(cabecera-stocks-blog-seas.jpg);
+}
+
+
+
+.info-izquierda h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.info-izquierda p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#login-pestaña {
+  text-align: center;
+  width: 250px;
+  height: 200px;
+  background-color: black;
+}
+#registro-pestaña{
   
-  
+  text-align: center;
+  width: 250px;
+  height: 400px;
+  background-color: black;
+
+}
+
+.formularios {
+  width: 30%;
+  height: 100%;
+}
+

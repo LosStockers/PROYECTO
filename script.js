@@ -1,18 +1,20 @@
-const btnCrearCuenta = document.getElementById('btn-crear-cuenta');
-const btnVolverLogin = document.getElementById('btn-volver-login');
-const loginPestaña = document.getElementById('login-pestaña');
-const registroPestaña = document.getElementById('registro-pestaña');
+ document.addEventListener('DOMContentLoaded', function () {
+    const btnCrearCuenta = document.getElementById('btn-crear-cuenta');
+    const btnVolverLogin = document.getElementById('btn-volver-login');
+    const formularioCrearCuenta = document.getElementById('registro-pestaña');
+    const formularioInicioSesion = document.getElementById('login-pestaña');
 
-btnCrearCuenta.addEventListener('click', () => {
-  loginPestaña.style.animation = 'girarFormulario 0.5s forwards';
-  registroPestaña.style.animation = 'mostrarFormulario 0.5s forwards';
-  registroPestaña.style.display = 'block';
-  loginPestaña.style.display = 'none';
-});
+    btnCrearCuenta.addEventListener('click', function () {
+      formularioCrearCuenta.style.display = 'block';
+      formularioInicioSesion.style.display = 'none';
+    });
 
-btnVolverLogin.addEventListener('click', () => {
-  registroPestaña.style.animation = 'girarFormulario 0.5s forwards';
-  loginPestaña.style.animation = 'mostrarFormulario 0.5s forwards';
-  registroPestaña.style.display = 'none';
-  loginPestaña.style.display = 'block';
-});
+    btnVolverLogin.addEventListener('click', function () {
+      formularioCrearCuenta.style.display = 'none';
+      formularioInicioSesion.style.display = 'block';
+    });
+  });
+
+
+
+

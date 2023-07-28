@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tu página web</title>
   <link rel="stylesheet" href="estilo.css">
+
 </head>
 <body>
   <header class="cabecera">
@@ -21,61 +22,70 @@
     </nav>
   </header>
 
-  <main class="contenido">
-    <div class="info-izquierda">
-      <h1>Bienvenido a nuestra página</h1>
-      <p>¡Aquí viene la información de tu página web!</p>
+   <div class="contenido">
+    <div class="izquierda">
+      <div class="info-izquierda">
+       <h1>Bienvenido a nuestra página</h1>
+       <p>¡Aquí viene la información de tu página web!socotroco</p>
+     
     </div>
+    <div class="img" id="img1"></div>
+    <div class="img" id="img2"></div>
+  </div>
 
-    <!-- Formulario de inicio de sesión -->
-    <div class="formulario-inicio-sesion" id="login-pestaña">
-      <h2>Iniciar sesión</h2>
-      <form>
-        <label for="usuario">Nombre de usuario:</label>
-        <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario" required>
+        <!-- Formulario de inicio de sesión y crear cuenta -->
+        <div class="derecha">
+    <div class="formularios">
+      <!-- Formulario de inicio de sesión -->
+      <div class="formulario-inicio-sesion formulario-activo" id="login-pestaña">
+        <h2>Iniciar sesión</h2>
+        <form>
+          <label for="usuario">Nombre de usuario:</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario" required>
 
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
+          <label for="contraseña">Contraseña:</label>
+          <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
 
-        <div class="opciones">
-          <input type="checkbox" id="recordarme" name="recordarme">
-          <label for="recordarme">Recordarme</label>
-        </div>
+          <div class="opciones">
+            <input type="checkbox" id="recordarme" name="recordarme">
+            <label for="recordarme">Recordarme</label>
+          </div>
 
-        <button type="submit">Iniciar sesión</button>
-        <button type="button" id="btn-crear-cuenta">Crear cuenta</button>
-      </form>
+          <button type="submit">Iniciar sesión</button>
+          <button type="button" id="btn-crear-cuenta">Crear cuenta</button>
+        </form>
+      </div>
+
+      <!-- Formulario de crear cuenta (inicialmente oculto) -->
+      <div class="formulario-crear-cuenta" id="registro-pestaña" style= "display: none;">
+        <h2>Crear cuenta</h2>
+        <form>
+          <label for="nuevo-usuario">Nombre de usuario:</label>
+          <input type="text" id="nuevo-usuario" name="nuevo-usuario" placeholder="Ingresa tu nombre de usuario" required>
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+
+          <label for="nueva-contraseña">Contraseña:</label>
+          <input type="password" id="nueva-contraseña" name="nueva-contraseña" placeholder="Ingresa tu contraseña" required>
+
+          <label for="confirmar-contraseña">Confirmar contraseña:</label>
+          <input type="password" id="confirmar-contraseña" name="confirmar-contraseña" placeholder="Confirma tu contraseña" required>
+
+          <div class="opciones">
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Acepto los términos y condiciones</label>
+          </div>
+
+          <button type="submit">Crear cuenta</button>
+          <button type="button" id="btn-volver-login">Volver a inicio de sesión</button>
+        </form>
+      </div>
     </div>
+  </div>
+    
+  </div>
 
-    <!-- Formulario de crear cuenta (inicialmente oculto) -->
-    <div class="formulario-crear-cuenta" id="registro-pestaña" style="display: none;">
-      <h2>Crear cuenta</h2>
-      <form>
-        <label for="nuevo-usuario">Nombre de usuario:</label>
-        <input type="text" id="nuevo-usuario" name="nuevo-usuario" placeholder="Ingresa tu nombre de usuario" required>
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-
-        <label for="nueva-contraseña">Contraseña:</label>
-        <input type="password" id="nueva-contraseña" name="nueva-contraseña" placeholder="Ingresa tu contraseña" required>
-
-        <label for="confirmar-contraseña">Confirmar contraseña:</label>
-        <input type="password" id="confirmar-contraseña" name="confirmar-contraseña" placeholder="Confirma tu contraseña" required>
-
-        <div class="opciones">
-          <input type="checkbox" id="terminos" name="terminos" required>
-          <label for="terminos">Acepto los términos y condiciones</label>
-        </div>
-
-        <button type="submit">Crear cuenta</button>
-        <button type="button" id="btn-volver-login">Volver a inicio de sesión</button>
-      </form>
-    </div>
-  </main>
-
-  <!-- Aquí puedes continuar con otros elementos de la página -->
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
