@@ -44,7 +44,7 @@ CREATE TABLE Elemento (
     SubFamilia varchar(35),                    -- Campo para almacenar la subfamilia a la que pertenece el elemento.
     Familia varchar(35),                       -- Campo para almacenar la familia a la que pertenece el elemento.
     Negocio varchar(35),                       -- Campo para almacenar el nombre del negocio al que pertenece el elemento.
-    ArchivoImagen varchar(40),                  -- Campo para almacenar el nombre del archivo de imagen asociado al elemento.
+    ArchivoImagen varchar(40)                 
     /*ProveedorID int(8)*/
 );
 
