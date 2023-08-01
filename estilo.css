@@ -1,12 +1,12 @@
-
-body {
-  /* Configuración del fondo, márgenes, etc. */
+html {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
+}
+body {
+  /* Configuración del fondo, márgenes, etc. */
   font-family: Arial, sans-serif;
   background-image: url(cabecera-stocks-blog-seas.jpg);
+  background-size: cover;
 }
 
 /* Estilos para la cabecera */
@@ -14,7 +14,7 @@ body {
   /* Configuración del fondo, colores, márgenes, etc. */
   background-color: #333333;
   color: #ffffff;
-  padding: 20px;
+ /*  padding: 20px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,15 +26,15 @@ body {
 .menu ul {
   /* Estilos del menú de navegación */
   list-style: none;
-  margin: 0;
-  padding: 0;
+
 }
 
 .menu li {
   /* Estilos de los elementos del menú */
-  display: inline-block;
-  margin-right: 20px;
+ 
+ /* margin-right: 20px; */
 }
+
 
 .menu li:last-child {
   /* Estilos del último elemento del menú */
@@ -45,46 +45,43 @@ body {
   /* Estilos de los enlaces del menú */
   color: #ffffff;
   text-decoration: none;
-  padding: 5px 10px;
+ /* padding: 5px 10px; */
 }
 
 .menu a:hover {
   /* Estilos de los enlaces del menú al pasar el cursor sobre ellos */
   background-color: #ffffff;
   color: #333333;
-  border-radius: 4px;
+ /* border-radius: 4px; */
 }
 
 /* Estilos para el contenido de la página */
 .contenido {
-  /* Configuración del contenido, márgenes, etc. */
+ 
 
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px;
+ /* padding: 30px; */
   text-align: center;
 }
 
-/* Estilos para la información de la izquierda */
+
 .info-izquierda {
- 
-  text-align: left;
   background-color: #333333c2;
-  padding: 20px;
-  border-radius: 8px;
+ /* padding: 20px;*/
+ /* border-radius: 8px; */
   color: #ffffff;
   width: 70%;
   height: 30%;
+  left: auto;
 }
 #img1 {
   width: 35%;
   height: 70%;
-  background-image: url(cabecera-stocks-blog-seas.jpg);
+ background-color: azure;
 }
 #img2 {
   width: 35%;
   height: 70%;
-  background-image: url(cabecera-stocks-blog-seas.jpg);
+  background-color: bisque;
 }
 
 
@@ -103,8 +100,8 @@ body {
   text-align: center;
   width: 250px;
   height: 200px;
-  background-color: black;
-}
+  background-color: rgba(0, 0, 0, 0.689);
+} 
 #registro-pestaña{
   
   text-align: center;
@@ -114,8 +111,22 @@ body {
 
 }
 
-.formularios {
-  width: 30%;
-  height: 100%;
+
+.derecha {
+  background-color: red;
+  position: relative;
+  left: auto;
+  right: auto;
+
 }
 
+.contenido {
+  background-color: aqua;
+  position: relative;
+}
+
+.formularios {
+ width: 30%;
+ height: 100%;
+ right: 100%
+}

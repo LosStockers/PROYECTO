@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ejemplo.css">
+</head>
+
+
+
+
+<body>
+    <header class="cabecera">
+        <div class="logo">
+          <img src="LOGITOCOSITO Y YO QUE SE.png" alt="Logo de tu página">
+        </div>
+    </header> 
+
+
+    <div id="contenido">
+        <div id="izquierda" class="columna">
+            <div id="infoIzq" class="fila">
+                <h1>Bienvenido a nuestra página</h1>
+                <p>¡Aquí viene la información de tu página web!socotroco</p>
+            </div>
+            <div id="imgIzq" class="fila"></div>
+        </div>
+
+
+        <div id="derecha" class="columna">
+            
+            <div id="formularios" class="fila">
+                <div class="formulario-inicio-sesion formulario-activo" id="login-pestaña">
+                    <h2>Iniciar sesión</h2>
+                    <form>
+                      <label for="usuario">Nombre de usuario:</label> <br>
+                     <br> <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario" required>
+            
+                     <br> <br> <label for="contraseña">Contraseña:</label>
+                    <br> <br> <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required>
+            
+                     <br> <br> <div class="opciones">
+                      <br>   <input type="checkbox" id="recordarme" name="recordarme">
+                        <br> <label for="recordarme">Recordarme</label>
+                      </div>
+            
+                      <br> <br>  <button type="submit">Iniciar sesión</button>
+                     <br> <br>   <button type="button" id="btn-crear-cuenta">Crear cuenta</button>
+                    </form>
+                  </div>
+
+
+                  <div class="fila" id="registro-pestaña" style= "display: none;">
+                    <h2>Crear cuenta</h2>
+                    <form>
+                      <label for="nuevo-usuario">Nombre de usuario:</label>
+                      <input type="text" id="nuevo-usuario" name="nuevo-usuario" placeholder="Ingresa tu nombre de usuario" required>
+            
+                      <label for="email">Correo electrónico:</label>
+                      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+            
+                      <label for="nueva-contraseña">Contraseña:</label>
+                      <input type="password" id="nueva-contraseña" name="nueva-contraseña" placeholder="Ingresa tu contraseña" required>
+            
+                      <label for="confirmar-contraseña">Confirmar contraseña:</label>
+                      <input type="password" id="confirmar-contraseña" name="confirmar-contraseña" placeholder="Confirma tu contraseña" required>
+            
+                      <div class="opciones">
+                        <input type="checkbox" id="terminos" name="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones</label>
+                      </div>
+            
+                      <button type="submit">Crear cuenta</button>
+                      <button type="button" id="btn-volver-login">Volver a inicio de sesión</button>
+                    </form>
+                  </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

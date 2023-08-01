@@ -1,0 +1,64 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.columna{
+    height: 100%;
+}
+
+.fila{
+    width: 100%;
+}
+
+#contenido{
+    position: relative;
+    width: 90%;
+    height: 85%;
+    left: 5%;
+    top: 3%;
+    right: auto;
+    bottom: auto;
+    background-color: blue;
+}
+
+#izquierda{
+    width: 70%;
+    float: left;
+    background-color: green;
+}
+
+#derecha {
+    position: relative;
+    float: left;
+    width: 30%;
+    left: 0%;
+    background-color: rgb(69, 15, 0) ;
+}
+
+.cabecera {
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+  }
+
+  #infoIzq{
+    position: relative;
+    height:calc(30% - 1px);
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+  
+  .logo img {
+    max-width: 150px;
+  }
+
+  #formularios {
+    text-align: center;
+    position: relative;
+    width:100%;
+    height: 100%;
+    position: relative;
+  }
