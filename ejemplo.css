@@ -3,6 +3,9 @@ html,body{
     height: 100%;
     margin: 0px;
 }
+html {
+  background-image: url(cabecera-stocks-blog-seas.jpg);
+}
 
 .columna{
     height: 100%;
@@ -31,6 +34,7 @@ html,body{
     float: left;
     box-shadow: 0px 0px 25px #000000;
     backdrop-filter: blur(10px);
+  
 }
 
 #derecha {
@@ -58,6 +62,13 @@ html,body{
     text-align: center;
     
 }
+.imagenes {
+  width: 100%;
+  background-color: #000000;
+  height: 66.5%;
+  display: flex;
+  align-items: stretch;
+}
   
   .logo img {
     max-width: 150px;
@@ -69,33 +80,115 @@ html,body{
     width:100%;
     height: 100%;
     position: relative;
-    
-    
-  }
+     }
 
-  html {
-    background-image: url(cabecera-stocks-blog-seas.jpg);
-  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   #imgIzq {
     position: relative;
     background-color: aqua;
-    width: 20%;
-    height: 70%;
+    width: 33.3%;
+    height: 100%;
   }
-  #imgDer {
-    position: relative;
-    background-image: url(6613.jpg);
-    width: 20%;
-    float: right;
-    right: 0%;
-    height: 20%;
-  }
+
   #imgMid {
     position: relative;
-    width: 20%;
-    height: 20%;
-    background-image: url(6613.jpg);
-    margin-left: 40%;
+    width: 33.3%;
+    height: 100%;
+   background-color: #000000;
+   }
 
-  }
+  #imgDer {
+    position: relative;
+ background-color: beige;
+    right: 0%;
+    width: 33.4%;
+    height: 100%;
+    }
