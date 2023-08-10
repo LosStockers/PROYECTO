@@ -1,6 +1,7 @@
 -- ============================================
 -- Fecha: 20/7/2023
 -- ============================================
+CREATE DATABASE EmeraldStockers;
 
 USE EmeraldStockers;
 
@@ -10,6 +11,7 @@ CREATE TABLE Usuario (
     Nombre varchar(25) NOT NULL,               -- Campo para almacenar el nombre del usuario. No puede ser nulo.
     Privilegio int(1),                         -- Campo para almacenar el nivel de privilegio del usuario.
     Negocio varchar(35) NOT NULL               -- Campo para almacenar el nombre del negocio al que pertenece el usuario. No puede ser nulo.
+    
 );
 
 -- Tabla "Registra" para registrar fechas de registro de usuarios
@@ -36,7 +38,7 @@ CREATE TABLE Sube (
 
 -- Tabla "Elemento" para almacenar información de los elementos en stock
 CREATE TABLE Elemento (
-    CodigoBarras int(16) PRIMARY KEY,          -- Campo para almacenar el código de barras del elemento. Es la clave primaria.
+    CodigoBarras int(16) PRIMARY KEY NOT NULL,          -- Campo para almacenar el código de barras del elemento. Es la clave primaria.
     Nombre varchar(35) NOT NULL,               -- Campo para almacenar el nombre del elemento. No puede ser nulo.
     Volumen varchar(20),                       -- Campo para almacenar el volumen del elemento.
     FechaVen date,                             -- Campo para almacenar la fecha de vencimiento del elemento.
@@ -44,8 +46,7 @@ CREATE TABLE Elemento (
     SubFamilia varchar(35),                    -- Campo para almacenar la subfamilia a la que pertenece el elemento.
     Familia varchar(35),                       -- Campo para almacenar la familia a la que pertenece el elemento.
     Negocio varchar(35),                       -- Campo para almacenar el nombre del negocio al que pertenece el elemento.
-    ArchivoImagen varchar(40)                 
-    /*ProveedorID int(8)*/
+    ArchivoImagen json                  -- Campo para almacenar imagen asociada al elemento.
 );
 
 -- Tabla "Tiene" para registrar fechas asociadas a elementos
@@ -61,12 +62,8 @@ CREATE TABLE Nota (
     Descripcion varchar(50)                   -- Campo para almacenar la descripción de la nota.
 );
 
-/*
-CREATE TABLE Proveedor (
-    ID int(8) PRIMARY KEY AUTO_INCREMENT,          -- Campo para almacenar un ID único para cada proveedor.
-    NombreEmpresa varchar(50) NOT NULL,            -- Campo para almacenar el nombre de la empresa proveedora. No puede ser nulo.
-    Contacto varchar(50),                          -- Campo para almacenar el nombre de la persona de contacto en la empresa.
-    CorreoContacto varchar(50),                    -- Campo para almacenar el correo de contacto de la persona en la empresa.
-    TelefonoContacto varchar(20)                   -- Campo para almacenar el número de teléfono de contacto de la persona en la empresa.
+-- Tabla "BaseUsuario" para almacenar las bases de datos del usuarios
+CREATE TABLE BaseUsuario (
+    IDregistro varchar(50) NOT NULL,        -- Campo para almacenar el correo del usuario dueño de la base de datos
+    NombreBDD varchar(50) PRIMARY KEY NOT NULL                      -- Campo para almacenar el nombre de la base de datos
 );
-*/
