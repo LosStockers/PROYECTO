@@ -177,18 +177,52 @@ html {
     width: 33.3%;
     height: 100%;
   }
+ #espacioimgizq{
+    position: relative;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    right: auto;
+    top: 25%;
+    bottom: auto;
+    background-color: antiquewhite;
+}
 
-  #imgMid {
+
+
+ #imgMid {
     position: relative;
     width: 33.3%;
     height: 100%;
    background-color: #000000;
    }
-
-  #imgDer {
+    #espacioimgmid{
     position: relative;
- background-color: beige;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    right: auto;
+    top: 25%;
+    bottom: auto;
+    background-color: antiquewhite;
+}
+  
+
+#imgDer {
+    position: relative;
+    background-color: rgb(111, 111, 0);
     right: 0%;
     width: 33.4%;
     height: 100%;
     }
+    #espacioimgder{
+      position: relative;
+      width: 50%;
+      height: 50%;
+      left: 25%;
+      right: auto;
+      top: 25%;
+      bottom: auto;
+      background-color: antiquewhite;
+  }
+
