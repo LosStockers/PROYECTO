@@ -179,13 +179,14 @@ html {
   }
  #espacioimgizq{
     position: relative;
-    width: 50%;
-    height: 50%;
-    left: 25%;
+    width: 70%;
+    height: 70%;
+    left: 15%;
     right: auto;
-    top: 25%;
+    top: 15%;
     bottom: auto;
-    background-color: antiquewhite;
+    background-image: url(Miss\ Kobayashi\ Dragon\ Maid\ x\ Lector\ Masculino\ Dragon.jpg);
+    background-size: 100%;
 }
 
 
@@ -197,14 +198,15 @@ html {
    background-color: #000000;
    }
     #espacioimgmid{
-    position: relative;
-    width: 50%;
-    height: 50%;
-    left: 25%;
-    right: auto;
-    top: 25%;
-    bottom: auto;
-    background-color: antiquewhite;
+      position: relative;
+      width: 70%;
+      height: 70%;
+      left: 15%;
+      right: auto;
+      top: 15%;
+      bottom: auto;
+      background-image: url(Miss\ Kobayashi\ Dragon\ Maid\ x\ Lector\ Masculino\ Dragon.jpg);
+      background-size: 100%;
 }
   
 
@@ -217,12 +219,13 @@ html {
     }
     #espacioimgder{
       position: relative;
-      width: 50%;
-      height: 50%;
-      left: 25%;
+      width: 70%;
+      height: 70%;
+      left: 15%;
       right: auto;
-      top: 25%;
+      top: 15%;
       bottom: auto;
-      background-color: antiquewhite;
+      background-image: url(Miss\ Kobayashi\ Dragon\ Maid\ x\ Lector\ Masculino\ Dragon.jpg);
+      background-size: 100%;
   }
 
