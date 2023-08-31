@@ -16,5 +16,17 @@
   });
 
 
+  const btnsi = document.getElementById("btnsi");
+  const btnno = document.getElementById("btnno");
 
-
+  let lista = ["a","b","c","d","e","f"]
+  let tope = 0
+  
+  function moverElSocotroco (lista, ) {
+   if ((tope+2) > (lista.length-1)) {
+    
+   } else {
+    div.innerText = lista[tope]+"-"+lista[tope+1]+" "+lista[tope+2]
+   }
+   
+  }
