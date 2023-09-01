@@ -30,39 +30,43 @@ body{
 
         position:absolute;
   width :20vw;
-  height:20vw;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%;
-  top:50%; left:50%;
+  height: 27vw;
+  
+  
+  top:30%; left:38%;bottom: 30%;right: 38%;
   margin-top: -10vw;
   margin-left: -10vw;
-  animation: rotar3d 25s linear infinite;
-  line-height: 20vw;
+  
+  
   font-size: 10vw;
+  margin: 20px;
         
         
 }
 
 #div11 {
     height: 100%;
-    width: 300px;
+    width: 100%;
     background-color:red;
-    
+    margin: 20px;
     display: flex;
   justify-content: center;
   align-items: center;
+  overflow:visible;
+  font-size: 74px;
 }
 
 
 
 #div12{
     height: 100%;
-    width: 300px;
+    width: 100%;
     background-color:blue;
-
+    margin: 20px;
     display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 74px;
 }
 
 
@@ -70,10 +74,11 @@ body{
     height: 100%;
     width: 300px;
     background-color: blueviolet;
-
+    margin: 20px;
     display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 74px;
 }
 
 #div14{
@@ -83,13 +88,20 @@ body{
     border: 10px solid black;
     filter:alpha (opacity=70); -moz-opacity:.70;opacity: .888; 
     display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: inset;
+    justify-content: center;
+    align-items: center;
+    border-style: inset;
+  margin: 20px;
+  font-size: 74px;
+  padding: 50px;
   
 }
 #div141{
     height: 100%;
     width: 100%;
     background-color:yellow;
+    font-size: 20px;
+    top:30%; left:38%;bottom: 30%;right: 38%;
+    
 }
+
