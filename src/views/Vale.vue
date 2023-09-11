@@ -1,5 +1,56 @@
 <template>
     <div class="Vale">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCOTROCO</title>
+    <link rel="stylesheet" href="vale.css">
+</head>
+<body> 
+  <div id="base">
+    <div id="cabeza">
+      <header>
+        <div class="logo">
+          <a href="inicio.html">
+            <img src="LOGITOCOSITO Y YO QUE SE.png" alt="Logo">
+          </a>
+        </div>
+        <div class="buttons">
+          <a href="atras.html" class="back-button">Atrás</a>
+          <button disabled>Botón 1</button>
+          <button disabled>Botón 2</button>
+        </div>
+      </header>
+    </div>
+    <div id="cuerpo">
+      <div class="todo">
+        <a href="pagos.html" class="button left">+</a>
+        <div class="gestor-info">
+          <header class="header">
+            <h2>mueve el toto</h2>
+          </header>
+          <div class="gestor-img">
+            <img src="fabuloso.jpg" alt="Imagen del Gestor">
+          </div>
+          <div class="texto">
+          <p class="color-texto">Lorem ipsum dolor sit amet consectetur pudiandae tempora ipsam quaerat eum.</p>
+        </div>
+        </div>
+        
+        <a href="pagos.html" class="button right">+</a>
+      </div>
+      
+    </div>
+  </div>
+  <script src="vale.js"></script>
+</body>
+</html>
 
     </div>
 </template>
+
+<style scoped>
+*
+</style>
