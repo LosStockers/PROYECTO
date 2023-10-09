@@ -36,11 +36,11 @@
                 </v-col>
                 <v-col class="columna">
                   <v-btn  prepend-icon   class="btn_cuenta mr-5" >
-                  <img src="SetaSolarHD.ico" class="imagen mr-2">
+                  <img src="solo una tuerca.ico" class="imagen mr-2">
                   <h4 class="texto">Crear Cuenta</h4>
                   </v-btn>
                   <v-btn  prepend-icon   class="btn_cuenta mr-5" >
-                  <img src="SetaSolarHD.ico" class="imagen mr-2">
+                  <img src="solo una tuerca.ico" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
                 </v-col>
