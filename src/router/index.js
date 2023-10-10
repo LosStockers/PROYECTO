@@ -18,7 +18,17 @@ const routes = [
         path: '/inicio',
         name: 'Inicio',
         component: () => import('@/views/Inicio.vue')
-      }
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: () => import('@/views/iniciar.vue')
+      },
+      {
+        path: '/Pagina',
+        name: '/Pagina',
+        component: () => import ('@/views/iniciar.vue')
+      },
     ],
   },
 ]
