@@ -1,19 +1,22 @@
 <template>
     <div>
       <v-toolbar
+        
         dark
         prominent
-        image="WhatsApp Image 2023-10-07 at 01.43.06.jpeg"
+        image="rosado.jpeg"
+        
         
       >
      
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>        
-        <img src="logo emerald stockers.png" alt="logo" id="laimagen"> 
-
-        <v-spacer></v-spacer>
-  
-        <v-btn icon>
-          <v-icon>mdi-export</v-icon>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>  
+          <v-spacer id="izquierda"></v-spacer>
+            
+          <img src="logo emerald stockers.png" alt="logo" id="laimagen"> 
+          <v-app-bar-title style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" >Emerald Stockers</v-app-bar-title>
+          <v-spacer id="derecha"></v-spacer>
+        <v-btn icon id="iconoDerecha">
+          <v-icon></v-icon>
         </v-btn>
       </v-toolbar>
     </div>
@@ -21,8 +24,17 @@
 
   
   <style scoped>
+
+  #iconoDerecha{
+      background-image: url("solo una tuerca.ico");
+      background-size: cover;  
+    }
 #laimagen {
   
   width: 50px;
+}
+#izquierda {
+  width: 180px;
+  height: max-content;
 }
   </style>
