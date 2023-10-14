@@ -2,8 +2,9 @@
     <v-app>
         <Toolvar/>
         <RouterView/>
-        <Footer/>
+        
     </v-app>
+    <Footer/>
 </template>
 
 <script setup>
