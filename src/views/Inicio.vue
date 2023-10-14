@@ -1,6 +1,7 @@
 <template>
   <v-row class="SubirProd">
-    <v-card class="cardProd">
+    <v-form id="SubirProdF">
+     <v-card class="cardProd">
       <v-container width="">
         <v-col col="12">
           <v-text-field
@@ -8,9 +9,10 @@
             required
             placeholder="Fabuloso"
             type="text"
-            id="FormNombre"
+           v-model="NombreForm"
             class="Formulario"
           ></v-text-field>
+
         </v-col>
 
         <v-col col="12">
@@ -18,7 +20,7 @@
             label="Stock"
             placeholder="56u"
             type="int"
-            id="FormStock"
+            v-model="FormStock"
             class="Formulario"
           ></v-text-field>
         </v-col>
@@ -26,7 +28,7 @@
         <v-col col="12" >
           <v-autocomplete
             label="Categoria"
-            id="FormCateg"
+            v-model="FormCateg"
             :items="['Tecnologia', 'Alimentos', 'Bebida', 
                 'Ropa y moda', 'Congelados', 'Enlatados', 
                 'Electricos', 'Limpieza', 'Jugetes', 'Libros', 
@@ -41,7 +43,7 @@
             label="Tamaño"
             placeholder="150g"
             type=""
-            id="FormTamaño"
+            v-model="FormTamaño"
             class="Formulario"
           ></v-text-field>
         </v-col>
@@ -50,9 +52,10 @@
           <v-file-input
             label="Imagen"
             prepend-icon=""
-            accept="image/png, image/jpeg, image/bmp, image/jpg"
+            accept="image/*"
             id="NombIMG"
-            class="Formulario"
+            v-model="NombIMG"
+            class="Formlario"
           ></v-file-input>
         </v-col>
 
@@ -60,15 +63,40 @@
           <v-col
           cols="12"
           >
-            <v-btn @click="MandarDatos()" class="Botones">Subir</v-btn>
-            <v-btn onclick="Previsualisar" class="Botones">Previsualisar</v-btn>
+            <v-btn @Click="MandarDatos()" class="Botones">Subir</v-btn>
+            
             <v-btn class="Botones">Cancelar</v-btn>
         </v-col> 
-      </v-card> 
+       </v-card> 
       </v-container>
-    </v-card>
+     </v-card>
+    </v-form>
+
   </v-row>
+
+
+    <ul class="prevproductos">
+      <li>
+        <div id="IMGmos" style="display: block;">
+          <img id="imagenMostrada" src="arbol.jpg" alt="Imagen Predefinida" 
+          style="max-width: 200px; max-height: 200px;">
+          
+        </div>
+
+        <div id="DatosMos"  style="display: block;">
+          <h2>Datos del producto:</h2>
+          <p><strong>Nombre:</strong>{{ NombreForm }}</p>
+          <p><strong>Stock:</strong>{{ FormStock }}</p>
+          <p><strong>Categoría:</strong>{{ FormCateg }}</p>
+          <p><strong>Tamaño:</strong>{{ FormTamaño }}</p>
+        </div>
+      </li>
+    </ul>
+
+
+  
 </template>
+
 <style scoped>
   body,
   html {
@@ -78,6 +106,10 @@
     margin: 0;
   }
 
+  #SubirProdF{
+    height: 100%;
+    width: 100%;
+  }
   .SubirProd {
     margin-left: 7%;
     margin-top: 3%;
@@ -88,7 +120,7 @@
     background-color: rgb(186, 186, 255);
   }
   .cardProd {
-    width: 97%;
+    width: 96%;
     margin: 2%;
   }
  
@@ -101,29 +133,92 @@
     width:80%;
     justify-content: center;
   }
-
+  
+  .prevproductos{
+    float: right;
+    position: relative;
+  }
 </style>
 
-<script setup>
-import { RouterLink } from 'vue-router';
+<script >
 
-function MandarDatos() {
+
+/*const Formulario = document.getElementById('SubirProdF');
+
+const PrevBoton = document.getElementById('PrevFormulario');
+
+const datosMostrados = document.getElementById('DatosMos');
+const IMGmostrada = document.getElementById('IMGmos');
+
+
+PrevBoton.addEventListener('click', function (){
+
+  const NombreP = document.getElementById('FormNombre').value
+  const StockP = document.getElementById('FormStock').value
+  const CategoriaP = document.getElementById('FormCateg').value
+  const TamañoP = document.getElementById('FormTamaño').value
+  const NombIMGP = document.getElementById('NombIMG').value
+
+  console.log("HOLA")
+})
+
+
+
+
+/*function MandarDatos() {
   
-  let NombreP = document.getElementById('FormNombre').value
-  let StockP = document.getElementById('FormStock').value
-  let CategoriaP = document.getElementById('FormCateg').value
-  let TamañoP = document.getElementById('FormTamaño').value
-  let NombIMGP = document.getElementById('NombIMG').value
-
-}
+}*/
 
 function Previsualisar() {
+    let NombreP = document.getElementById('FormNombre').value
+    let StockP = document.getElementById('FormStock').value
+    let CategoriaP = document.getElementById('FormCateg').value
+    let TamañoP = document.getElementById('FormTamaño').value
+    let NombIMGP = document.getElementById('NombIMG').value
+  
+   
+  }
 
-  let NombreP = document.getElementById('FormNombre').value
-  let StockP = document.getElementById('FormStock').value
-  let CategoriaP = document.getElementById('FormCateg').value
-  let TamañoP = document.getElementById('FormTamaño').value
-  let NombIMGP = document.getElementById('NombIMG').value
+</script>
 
-}
+<script setup>
+import { ref } from 'vue'
+
+  const NombreForm = ref("")
+  const FormStock = ref("")
+  const FormCateg = ref("")
+  const FormTamaño = ref("")
+
+
+   
+/*    
+        // Obtener los divs de imagen y datos por su ID
+        const imagenContainer = document.getElementById('IMGmos');
+        const datosContainer = document.getElementById('DatosMos');
+
+        // Agregar un evento al botón de previsualizar
+        function Previsualisar() {
+            // Obtener los valores de los campos del formulario
+
+
+            // Mostrar los datos en los elementos correspondientes
+            document.getElementById('nombreMostrado').textContent = NombreForm;
+            document.getElementById('stockMostrado').textContent = FormStock;
+            document.getElementById('categoriaMostrada').textContent = FormCateg;
+            document.getElementById('tamañoMostrado').textContent = FormTamaño;
+
+            // Mostrar la imagen seleccionada o la predefinida si no se selecciona ninguna
+            const imagenInput = document.getElementById('NombIMG');
+            if (imagenInput.files.length > 0) {
+                const imagenSeleccionada = imagenInput.files[0];
+                const imagenURL = URL.createObjectURL(imagenSeleccionada);
+                document.getElementById('IMGmos').src = imagenURL;
+            } else {
+                document.getElementById('IMGmos').src = '../components/arbol.jpg';
+            }
+
+            // Mostrar los divs de imagen y datos
+            IMGmos.style.display = 'flex';
+            DatosMos.style.display = 'block';
+            };*/ 
 </script>
