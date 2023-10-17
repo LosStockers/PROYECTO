@@ -1,4 +1,5 @@
 <template>
+   <v-layout>
   <v-footer
     class="bg-indigo-lighten-1 text-center d-flex flex-column"
   >
@@ -14,4 +15,5 @@
       {{ new Date().getFullYear() }} — ALGO ACÁ <strong>Vueti</strong>
     </div>
   </v-footer>
+  </v-layout>
 </template>
