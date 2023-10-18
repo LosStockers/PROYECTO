@@ -23,4 +23,13 @@ export default {
   top: 20px;
   right: 20px;
 }
+
+.todo{
+  width: 50%;
+  height: 50%;
+  background-color: red;
+  margin-left: 20%;
+  margin-top:10% ;
+
+}
 </style>
