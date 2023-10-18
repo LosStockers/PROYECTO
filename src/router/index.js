@@ -27,7 +27,7 @@ const routes = [
       {
         path: '/Pagina',
         name: '/Pagina',
-        component: () => import ('@/views/iniciar.vue')
+        component: () => import ('@/views/Pagina.vue')
       },
     ],
   },
