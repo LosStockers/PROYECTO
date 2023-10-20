@@ -1,6 +1,6 @@
 <template >
   <span>
-    <v-img aspect-ratio="16/9" cover src="cajas..jpeg">
+    <v-img aspect-ratio="16/9" cover src="cajas.jpeg">
     <v-row justify="center" >
       <v-card
         style="
