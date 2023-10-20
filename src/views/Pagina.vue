@@ -1,7 +1,10 @@
 <template>
   <v-app>
-    <v-btn @click="navigateToInicio" class="navigate-button" color="primary">Ir a Inicio</v-btn>
+    <h1>Tus Productos</h1>
+    <v-btn @click="navigateToInicio" class="navigate-button" color="primary">Agregar Productos</v-btn>
     <div class="todo">
+
+  
 
     </div>
   </v-app>
@@ -25,11 +28,17 @@ export default {
 }
 
 .todo{
-  width: 50%;
-  height: 50%;
+  width: 70%;
+  height: 70%;
   background-color: red;
-  margin-left: 20%;
-  margin-top:10% ;
+  margin-left: 15%;
+  margin-top:5% ;
 
 }
+
+h1{
+  margin-left: 40% ;
+}
+
+
 </style>
