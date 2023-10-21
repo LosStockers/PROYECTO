@@ -1,6 +1,6 @@
 <template >
   <span>
-    <v-img aspect-ratio="16/9" cover src="cajas.jpeg">
+    <v-img aspect-ratio="16/9" cover :src="caja">
     <v-row justify="center" >
       <v-card
         style="
@@ -36,11 +36,11 @@
                 </v-col>
                 <v-col class="columna">
                   <v-btn  prepend-icon   class="btn_cuenta mr-5" >
-                  <img src="solo una tuerca.ico" class="imagen mr-2">
+                  <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Crear Cuenta</h4>
                   </v-btn>
                   <v-btn  prepend-icon   class="btn_cuenta mr-5" >
-                  <img src="solo una tuerca.ico" class="imagen mr-2">
+                  <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
                 </v-col>
@@ -56,7 +56,7 @@
   </template>
 
 <script setup>
- import { ref } from 'vue';
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
  const cosos = ref([
  {nombre:"",columnas:12,label:"Nombre", md:6, sm:6},
@@ -66,6 +66,8 @@ import { RouterLink } from 'vue-router';
  {nombre:"",columnas:12,label:"Repetir Contraseña",type:"password", md:6, sm:12,},
 
  ])
+ const caja = ref("cajas.jpg")
+ const tuerca = ref("tuerca.ico")
 </script>
 <style scoped>
 .Titulito{
