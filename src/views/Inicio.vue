@@ -70,7 +70,7 @@
 <div class="derP">
 
     <div id="IMGmos" style="display: block;" >
-      <img v-if="imageurl==null" id="imagenMostrada" src="arbol.jpg" alt="Imagen Predefinida" 
+      <img v-if="imageurl==null" id="imagenMostrada" alt="Imagen Predefinida" 
       style="max-width: 150px; max-height: 150px; " >
       <img v-if="imageurl" :src="imageurl" >
       
