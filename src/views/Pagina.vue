@@ -4,7 +4,7 @@
     <v-btn @click="navigateToInicio" class="navigate-button" color="primary">Agregar Productos</v-btn>
     <div class="todo">
 
-  
+      <v-btn @click="tuAccion" class="inner-button" color="secondary">Botón Interior</v-btn>
 
     </div>
   </v-app>
@@ -18,6 +18,12 @@ export default {
     }
   }
 };
+
+ function tuAccion(){
+      // Define aquí lo que quieres que haga el botón interior
+      // Por ejemplo, mostrar un mensaje de alerta
+      alert('Botón interior clickeado');
+    };
 </script>
 
 <style scoped>
@@ -34,6 +40,12 @@ export default {
   margin-left: 15%;
   margin-top:5% ;
 
+}
+
+.inner-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 h1{
