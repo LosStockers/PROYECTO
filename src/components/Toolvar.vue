@@ -22,6 +22,7 @@
     </div>
   </template>
 <script setup>
+  import { ref } from "vue"
   const rosado = ref("rosado.jpeg")
   const esmerald = ref("emerald.png")
 </script>
