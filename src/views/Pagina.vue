@@ -3,8 +3,28 @@
     <h1>Tus Productos</h1>
     <v-btn @click="navigateToInicio" class="navigate-button" color="primary">Agregar Productos</v-btn>
     <div class="todo">
+      <div class="derP">
 
-      <v-btn @click="tuAccion" class="inner-button" color="secondary">Botón Interior</v-btn>
+    <div id="IMGmos" style="display: block;" >
+      <img v-if="imageurl==null" id="imagenMostrada" alt="Imagen Predefinida" 
+      style="max-width: 150px; max-height: 150px; " >
+      <img v-if="imageurl" :src="imageurl" >
+      
+    </div>
+
+        <div id="DatosMos"  style="display: block;" >
+          <h2>Datos del producto:</h2>
+          <p><strong>Nombre:</strong>{{ NombreForm }}</p>
+          <p><strong>Stock:</strong>{{ FormStock }}</p>
+          <p><strong>Categoría:</strong>{{ FormCateg }}</p>
+          <p><strong>Tamaño:</strong>{{ FormTamaño }}</p>
+        </div>
+        
+        <v-btn @click="tuAccion" class="inner-button" color="secondary">Borrar</v-btn>
+
+</div>
+
+      
 
     </div>
   </v-app>
@@ -44,14 +64,26 @@ export default {
 }
 
 .inner-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  position: relative;
+  right: 0%;
+  bottom: 0%;
+  float: right ;
+  top: -15%;
 }
 
 h1{
   margin-left: 40% ;
 }
+
+.derP{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    width: 40%;
+    height: 40%;
+    
+    background-color: rgb(186, 186, 255)
+  }
 
 
 </style>
