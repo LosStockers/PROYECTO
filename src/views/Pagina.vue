@@ -24,9 +24,11 @@
 
 </div>
 
-      
 
+      
     </div>
+    <v-btn @click="copiarDatosMos" class="inner" color="primary">Copiar y Pegar</v-btn>
+
   </v-app>
 </template>
 
@@ -71,16 +73,21 @@ export default {
   top: -15%;
 }
 
+.inner{
+
+}
+
 h1{
   margin-left: 40% ;
 }
 
 .derP{
     position: relative;
-    right: 0px;
+    right: 0%;
     top: 0px;
-    width: 40%;
+    width: 60%;
     height: 40%;
+    left: 15%;
     
     background-color: rgb(186, 186, 255)
   }
