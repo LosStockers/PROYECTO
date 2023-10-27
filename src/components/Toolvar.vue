@@ -30,7 +30,7 @@
   <style scoped>
 
   #iconoDerecha{
-      background-image: url("solo una tuerca.ico");
+      background-image: url("tuerca.ico");
       background-size: cover;  
     }
 #laimagen {
