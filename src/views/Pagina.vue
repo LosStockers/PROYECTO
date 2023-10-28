@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <h1>Tus Productos</h1>
-    <v-btn @click="navigateToInicio" class="navigate-button" color="primary">Agregar Productos</v-btn>
+  <input type="button" value="Agregar Productos" @click="paginaCoso" class="navigate-button">
     <div class="todo">
       <div class="derP">
 
@@ -32,21 +32,24 @@
   </v-app>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
-export default {
-  methods: {
-    navigateToInicio() {
-      this.$router.push({ name: "Inicio" });
-    }
-  }
-};
 
- function tuAccion(){
-      // Define aquí lo que quieres que haga el botón interior
-      // Por ejemplo, mostrar un mensaje de alerta
-      alert('Botón interior clickeado');
-    };
+import { useRouter } from "vue-router"
+const useroute = useRouter()
+const paginaCoso =()=>{
+    useroute.push("/inicio")
+}
+
+const cosito = ref([])
+const funcionCosito=async()=>{
+
+  await fetch("http:localhost/coso.php")
+  .then(res => res.json())
+  .then(data => coso.value.push)
+
+}
+
 </script>
 
 <style scoped>
