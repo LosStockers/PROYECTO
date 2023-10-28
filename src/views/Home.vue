@@ -66,7 +66,7 @@ import { RouterLink } from 'vue-router';
  {nombre:"",columnas:12,label:"Repetir Contraseña",type:"password", md:6, sm:12,},
 
  ])
- const caja = ref("cajas.jpg")
+ const caja = ref("cajas.jpeg")
  const tuerca = ref("tuerca.ico")
 </script>
 <style scoped>
