@@ -32,8 +32,9 @@
             required
             hide-details
           ></v-text-field>
+          </v-col>
 
-                </v-col>
+          <v-checkbox label="Guardar Sesion"></v-checkbox>
                 <v-col class="columna">
                   <v-btn  prepend-icon   class="btn_cuenta mr-5" >
                   <img :src="tuerca" class="imagen mr-2">
@@ -43,6 +44,7 @@
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
+                
                 </v-col>
               </v-row>
             </v-container>
