@@ -29,6 +29,11 @@ const routes = [
         name: '/Pagina',
         component: () => import ('@/views/Pagina.vue')
       },
+      {
+        path: '/PapasHelado',
+        name: '/PapasHelado',
+        component: () => import ('@/views/Pagina.vue')
+      }
     ],
   },
 ]
