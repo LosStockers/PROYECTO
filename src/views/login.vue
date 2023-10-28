@@ -36,11 +36,11 @@
 
           <v-checkbox label="Guardar Sesion"></v-checkbox>
                 <v-col class="columna">
-                  <v-btn  prepend-icon   class="btn_cuenta mr-5" >
+                  <v-btn  prepend-icon   class="btn_cuenta mr-4" >
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Crear Cuenta</h4>
                   </v-btn>
-                  <v-btn  prepend-icon   class="btn_cuenta mr-5" >
+                  <v-btn  prepend-icon   class="btn_cuenta1 mr-5" >
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
@@ -59,7 +59,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
  const cosos = ref([
  {nombre:"",columnas:12,label:"Email",type:"Email", md:6, sm:12,},
  {nombre:"",columnas:12,label:"contraseña",type:"password", md:6, sm:12,},
@@ -68,6 +68,12 @@ import { RouterLink } from 'vue-router';
  ])
  const caja = ref("cajas.jpeg")
  const tuerca = ref("tuerca.ico")
+
+ const useroute = useRouter()
+ const btn_cuenta =()=>{
+    useroute.push("Home")
+ }
+
 </script>
 <style scoped>
 .Titulito{
