@@ -39,7 +39,7 @@
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Crear Cuenta</h4>
                   </v-btn>
-                  <v-btn  prepend-icon   class="btn_cuenta mr-5" >
+                  <v-btn  prepend-icon   class="btn_cuenta mr-5" @click="Iniciar"  >
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
@@ -56,6 +56,7 @@
   </template>
 
 <script setup>
+  
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
  const cosos = ref([
@@ -68,6 +69,14 @@ import { RouterLink } from 'vue-router';
  ])
  const caja = ref("cajas.jpeg")
  const tuerca = ref("tuerca.ico")
+
+  import { useRouter } from "vue-router"
+const useroute = useRouter()
+const Iniciar =()=>{
+    userouter.push("/login")
+}
+
+
 </script>
 <style scoped>
 .Titulito{
