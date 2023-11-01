@@ -10,8 +10,9 @@
             required
             placeholder="Fabuloso"
             type="text"
-           v-model="NombreForm"
+            v-model="NombreForm"
             class="Formulario"
+            id="Nombre"
           ></v-text-field>
 
         </v-col>
@@ -23,6 +24,7 @@
             type="int"
             v-model="FormStock"
             class="Formulario"
+            id="Stock"
           ></v-text-field>
         </v-col>
 
@@ -36,16 +38,18 @@
                 'Plantas y jardin', 'Decoracion', 'Productos salud', 
                 'Otros']"
                 class="Formulario"
+            id="Categoria"
           ></v-autocomplete>
         </v-col>
 
-        <v-col col="12" >
+        <v-col col="8" >
           <v-text-field
             label="Tamaño"
             placeholder="150g"
             type=""
             v-model="FormTamaño"
             class="Formulario"
+            id="Tamaño"
           ></v-text-field>
         </v-col>
 
@@ -57,9 +61,9 @@
           <v-col
           cols="12"
           >
-          <v-btn @Click="MandarDatos()" class="Botones">Subir</v-btn>
+          <v-btn @Click="enviarDatos()" class="Botones">Subir</v-btn>
           
-          <v-btn class="Botones">Cancelar</v-btn>
+          <v-btn @Click="conectarDB()" class="Botones">Cancelar</v-btn>
          </v-col> 
         </v-card> 
 
@@ -70,19 +74,21 @@
 <div class="derP">
 
     <div id="IMGmos" style="display: block;" >
-      <img v-if="imageurl==null" id="imagenMostrada" alt="Imagen Predefinida" 
+      <img v-if="imageurl==null" src="arbol.jpg" id="imagenMostrada" alt="Imagen Predefinida" 
       style="max-width: 150px; max-height: 150px; " >
       <img v-if="imageurl" :src="imageurl" >
       
     </div>
 
         <div id="DatosMos"  style="display: block;" >
-          <h2>Datos del producto:</h2>
+          <h3>Datos del producto:</h3>
           <p><strong>Nombre:</strong>{{ NombreForm }}</p>
           <p><strong>Stock:</strong>{{ FormStock }}</p>
           <p><strong>Categoría:</strong>{{ FormCateg }}</p>
           <p><strong>Tamaño:</strong>{{ FormTamaño }}</p>
         </div>
+
+
 
 </div>
 
@@ -156,49 +162,11 @@ img {
 
 </style>
 
-<script >
 
-
-/*const Formulario = document.getElementById('SubirProdF');
-
-const PrevBoton = document.getElementById('PrevFormulario');
-
-const datosMostrados = document.getElementById('DatosMos');
-const IMGmostrada = document.getElementById('IMGmos');
-
-
-PrevBoton.addEventListener('click', function (){
-
-  const NombreP = document.getElementById('FormNombre').value
-  const StockP = document.getElementById('FormStock').value
-  const CategoriaP = document.getElementById('FormCateg').value
-  const TamañoP = document.getElementById('FormTamaño').value
-  const NombIMGP = document.getElementById('NombIMG').value
-
-  console.log("HOLA")
-})
-
-
-
-
-/*function MandarDatos() {
-  
-}*/
-
-function Previsualisar() {
-    let NombreP = document.getElementById('FormNombre').value
-    let StockP = document.getElementById('FormStock').value
-    let CategoriaP = document.getElementById('FormCateg').value
-    let TamañoP = document.getElementById('FormTamaño').value
-    let NombIMGP = document.getElementById('NombIMG').value
-  
-   
-  }
-
-</script>
 
 <script setup>
 import { ref } from 'vue'
+
 
   const NombreForm = ref("")
   const FormStock = ref("")
@@ -221,4 +189,55 @@ const createImage = (file) => {
   reader.readAsDataURL(file);
 }
 
+const inputNombre = document.getElementById("Nombre")
+    const inputStock = document.getElementById("Stock")
+    const inputCategoria = document.getElementById("Categoria")
+    const inputTamaño = document.getElementById("Tamaño")
+
+    let datos = {
+    NombreForm,
+    FormStock,
+    FormCateg,
+    FormTamaño
+  }
+
+function enviarDatos() {
+  
+  fetch("https://localhost/api/subirprod.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: inputNombre, inputStock, inputCategoria, inputTamaño
+    }); 
+  }
+
+  
+/*
+  function pconexion() {
+   fetch("https://localhost/api/conexion.php", {
+    method: 'GET',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'content-Type': 'application/json'
+    },
+    body: JSON.stringify(datos)
+   }).then(res=>res.JSON()).then(
+    res=>(){
+      console.log(res)
+    }
+   ) 
+  }
+*/
+/*
+  const conectarDB= async()=>{
+    await fetch("http://localhost/api/conexion.php")
+    .then(res=> res.json())
+    .then(data=> console.log(data))
+  }
+  conectarDB()
+//recoje datos en php v
+//$datos = file_get_contents('php://input');
+*/
 </script>
