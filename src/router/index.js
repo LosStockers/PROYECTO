@@ -15,9 +15,9 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
       },
       {
-        path: '/inicio',
-        name: 'Inicio',
-        component: () => import('@/views/Inicio.vue')
+        path: '/subir',
+        name: 'subir',
+        component: () => import('@/views/SubirProd.vue')
       },
       {
         path: '/login',
@@ -33,7 +33,13 @@ const routes = [
         path: '/PapasHelado',
         name: '/PapasHelado',
         component: () => import ('@/views/Pagina.vue')
-      }
+      },
+      {
+        path: '/conexion',
+        name: '/conex',
+        component: () => import ('@/views/conexion.php')
+      },
+
     ],
   },
 ]
