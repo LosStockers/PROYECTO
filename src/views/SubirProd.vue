@@ -7,7 +7,7 @@
         <v-col>
           <v-text-field
             label="Nombre"
-            required
+            required 
             placeholder="Fabuloso"
             type="text"
             v-model="NombreForm"
@@ -53,10 +53,6 @@
           ></v-text-field>
         </v-col>
 
-        <v-col col="12">
-          <input type="file" @change="transIMG">
-        </v-col>
-        
         <v-card class="Botonera">
           <v-col
           cols="12"
@@ -72,20 +68,21 @@
 </div>
 
 <div class="derP">
-
-    <div id="IMGmos" style="display: block;" >
-      <img v-if="imageurl==null" src="arbol.jpg" id="imagenMostrada" alt="Imagen Predefinida" 
-      style="max-width: 150px; max-height: 150px; " >
-      <img v-if="imageurl" :src="imageurl" >
-      
-    </div>
-
         <div id="DatosMos"  style="display: block;" >
-          <h3>Datos del producto:</h3>
-          <p><strong>Nombre:</strong>{{ NombreForm }}</p>
-          <p><strong>Stock:</strong>{{ FormStock }}</p>
-          <p><strong>Categoría:</strong>{{ FormCateg }}</p>
-          <p><strong>Tamaño:</strong>{{ FormTamaño }}</p>
+          <table style="width:100%" justify-content="center">
+            <tr>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+                <th>Tamaño</th>
+            </tr>
+            <tr>
+                <td>{{ NombreForm }}</td>
+                <td>{{ FormStock }}</td>
+                <td>{{ FormCateg }}</td>
+                <td>{{ FormTamaño }}</td>
+            </tr>
+          </table>
         </div>
 
 
@@ -141,6 +138,8 @@
   #IMGmos{
     margin: 5%;
     float: left ;
+    height: 150px;
+    width: 150px;
   }
 img {
     border-style: none;
@@ -173,71 +172,41 @@ import { ref } from 'vue'
   const FormCateg = ref("")
   const FormTamaño = ref("")
 
-const imageurl = ref(null)
-
-const transIMG = (e) => {
-  const files = e.target.files || e.dataTransfer.files;
-  if (!files.length) return;
-  createImage(files[0]);
-}
-
-const createImage = (file) => {
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    imageurl.value = e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-const inputNombre = document.getElementById("Nombre")
-    const inputStock = document.getElementById("Stock")
-    const inputCategoria = document.getElementById("Categoria")
-    const inputTamaño = document.getElementById("Tamaño")
-
-    let datos = {
-    NombreForm,
-    FormStock,
-    FormCateg,
-    FormTamaño
-  }
-
-function enviarDatos() {
   
-  fetch("https://localhost/api/subirprod.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: inputNombre, inputStock, inputCategoria, inputTamaño
-    }); 
-  }
 
+
+
+
+  function enviarDatos() {
+    const inputNombre = document.getElementById("Nombre").value;
+    const inputStock = document.getElementById("Stock").value;
+    const inputCategoria = document.getElementById("Categoria").value;
+    const inputTamaño = document.getElementById("Tamaño").value;
   
-/*
-  function pconexion() {
-   fetch("https://localhost/api/conexion.php", {
-    method: 'GET',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'content-Type': 'application/json'
-    },
-    body: JSON.stringify(datos)
-   }).then(res=>res.JSON()).then(
-    res=>(){
-      console.log(res)
+    // Check if the inputNombre field is empty
+    if(inputNombre === '') {
+        alert('El campo nombre es obligatorio');
+        return;
     }
-   ) 
-  }
-*/
-/*
-  const conectarDB= async()=>{
-    await fetch("http://localhost/api/conexion.php")
-    .then(res=> res.json())
-    .then(data=> console.log(data))
-  }
-  conectarDB()
+
+    // Create a FormData object
+    let datos = new FormData();
+  
+    // Append the data to the FormData object
+    datos.append("inputNombre", inputNombre);
+    datos.append("inputStock", inputStock);
+    datos.append("inputCategoria", FormCateg.value);
+    datos.append("inputTamaño", inputTamaño);
+  
+    fetch("http://localhost/api/subirprod.php", {
+      method: "POST",
+      body: datos
+    });
+}
+
+  
+
 //recoje datos en php v
 //$datos = file_get_contents('php://input');
-*/
+
 </script>

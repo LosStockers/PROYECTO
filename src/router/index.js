@@ -34,11 +34,6 @@ const routes = [
         name: '/PapasHelado',
         component: () => import ('@/views/Pagina.vue')
       },
-      {
-        path: '/conexion',
-        name: '/conex',
-        component: () => import ('@/views/conexion.php')
-      },
 
     ],
   },

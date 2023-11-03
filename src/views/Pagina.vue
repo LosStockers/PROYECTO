@@ -5,19 +5,15 @@
     <div class="todo">
       <div class="derP">
 
-    <div id="IMGmos" style="display: block;" >
-      <img v-if="imageurl==null" id="imagenMostrada" alt="Imagen Predefinida" 
-      style="max-width: 150px; max-height: 150px; " >
-      <img v-if="imageurl" :src="imageurl" >
-      
-    </div>
-
         <div id="DatosMos"  style="display: block;" >
-          <h2>Datos del producto:</h2>
-          <p><strong>Nombre:</strong>{{ NombreForm }}</p>
-          <p><strong>Stock:</strong>{{ FormStock }}</p>
-          <p><strong>Categoría:</strong>{{ FormCateg }}</p>
-          <p><strong>Tamaño:</strong>{{ FormTamaño }}</p>
+          <table style="width:100%" justify-content="center"> 
+            <tr>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+                <th>Tamaño</th>
+            </tr>
+          </table>
         </div>
         
         <v-btn @click="tuAccion" class="inner-button" color="secondary">Borrar</v-btn>
@@ -38,13 +34,15 @@ import { ref } from 'vue';
 import { useRouter } from "vue-router"
 const useroute = useRouter()
 const paginaCoso =()=>{
-    useroute.push("/inicio")
+    useroute.push("/subir")
 }
+
+
 
 const cosito = ref([])
 const funcionCosito=async()=>{
 
-  await fetch("http:localhost/coso.php")
+  await fetch("http:localhost/traer_elementos.php")
   .then(res => res.json())
   .then(data => coso.value.push)
 
@@ -73,12 +71,10 @@ const funcionCosito=async()=>{
   right: 0%;
   bottom: 0%;
   float: right ;
-  top: -15%;
-}
-
-.inner{
 
 }
+
+
 
 h1{
   margin-left: 40% ;
