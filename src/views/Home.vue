@@ -67,6 +67,7 @@ import { RouterLink } from 'vue-router';
  {nombre:"",columnas:12,label:"Repetir Contraseña",type:"password", md:6, sm:12,},
 
  ])
+<<<<<<< Updated upstream
  const caja = ref("cajas.jpeg")
  const tuerca = ref("tuerca.ico")
 
@@ -77,6 +78,9 @@ const Iniciar =()=>{
 }
 
 
+=======
+ 
+>>>>>>> Stashed changes
 </script>
 <style scoped>
 .Titulito{
