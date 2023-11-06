@@ -1,27 +1,36 @@
 <template>
   <v-app>
     <h1>Tus Productos</h1>
-  <input type="button" value="Agregar Productos" @click="paginaCoso" class="navigate-button">
+    <input type="button" value="Agregar Productos" @click="paginaCoso" class="navigate-button">
     <div class="todo">
       <div class="derP">
 
-        <div id="DatosMos"  style="display: block;" >
-          <table style="width:100%" justify-content="center"> 
-            <tr>
-                <th>Nombre</th>
-                <th>Stock</th>
-                <th>Categoria</th>
-                <th>Tamaño</th>
-            </tr>
-          </table>
+
+        <div class="fila" style="height: 80%;">
+          <div id="IMGmos" class="columna" style="display: block;" >
+
+            <img v-if="imageurl==null" src="image.png" class="sinImagen" alt="Imagen Predefinida" style="" >
+            <img v-if="imageurl" :src="imageurl" >
+
+          </div>
+
+          <div id="DatosMos" class="columna"  style="display: block;" >
+            <h2>Datos del producto:</h2>
+            <p><strong>Nombre:</strong>{{ NombreForm }}</p>
+            <p><strong>Stock:</strong>{{ FormStock }}</p>
+            <p><strong>Categoría:</strong>{{ FormCateg }}</p>
+            <p><strong>Tamaño:</strong>{{ FormTamaño }}</p>
+          </div>
+
+
         </div>
+        <div class="fila" style="height: 20%;">
+          <v-btn @click="tuAccion" class="inner-button" color="secondary">Borrar</v-btn>
+
+        </div>
+        {{coso}}
         
-        <v-btn @click="tuAccion" class="inner-button" color="secondary">Borrar</v-btn>
-
-</div>
-
-
-      
+      </div> 
     </div>
     <v-btn @click="copiarDatosMos" class="inner" color="primary">Copiar y Pegar</v-btn>
 
@@ -33,6 +42,7 @@ import { ref } from 'vue';
 
 import { useRouter } from "vue-router"
 const useroute = useRouter()
+const coso = ref("")
 const paginaCoso =()=>{
     useroute.push("/subir")
 }
@@ -42,20 +52,39 @@ const paginaCoso =()=>{
 const cosito = ref([])
 const funcionCosito=async()=>{
 
-  await fetch("http:localhost/traer_elementos.php")
+
+  await fetch("http://localhost/traer_elementos.php")
   .then(res => res.json())
-  .then(data => coso.value.push)
+  .then(data => coso.value.push(data))
 
 }
+funcionCosito()
 
 </script>
 
 <style scoped>
+.columna{
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.fila{
+  width: 100%;
+}
 .navigate-button {
   position: absolute;
   top: 20px;
   right: 20px;
 }
+
+.sinImagen{
+  max-width: 50px; 
+  max-height: 50px; 
+  background-image: url("public/image.png");
+  float: left;
+}
+
 
 .todo{
   width: 70%;
