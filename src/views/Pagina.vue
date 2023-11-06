@@ -26,7 +26,7 @@
           <v-btn @click="tuAccion" class="inner-button" color="secondary">Borrar</v-btn>
 
         </div>
-        
+        {{coso}}
         
       </div> 
     </div>
@@ -40,6 +40,7 @@ import { ref } from 'vue';
 
 import { useRouter } from "vue-router"
 const useroute = useRouter()
+const coso = ref("")
 const paginaCoso =()=>{
     useroute.push("/inicio")
 }
@@ -47,11 +48,12 @@ const paginaCoso =()=>{
 const cosito = ref([])
 const funcionCosito=async()=>{
 
-  await fetch("http:localhost/coso.php")
+  await fetch("http://localhost/traer_elementos.php")
   .then(res => res.json())
-  .then(data => coso.value.push)
+  .then(data => coso.value.push(data))
 
 }
+funcionCosito()
 
 </script>
 
