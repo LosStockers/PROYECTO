@@ -44,6 +44,32 @@
     </v-card>
   </template>
 </v-dialog>
+  </v-form>
+</div>
+
+<div class="derP">
+        <div id="DatosMos"  style="display: block;" >
+          <table style="width:100%" justify-content="center">
+            <tr>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Categoria</th>
+                <th>Tamaño</th>
+            </tr>
+            <tr>
+                <td>{{ NombreForm }}</td>
+                <td>{{ FormStock }}</td>
+                <td>{{ FormCateg }}</td>
+            </tr>
+          </table>
+        </div>
+
+
+
+</div>
+
+
+  
 </template>
 
 <style> 
@@ -74,6 +100,7 @@ import { RouterLink, useRouter } from 'vue-router';
 
 
 
+//Recoje los datos ingresados del formulario y los muestra en la tabla.
   const NombreForm = ref("")
   const FormStock = ref("")
   const FormCateg = ref("")
@@ -83,28 +110,31 @@ import { RouterLink, useRouter } from 'vue-router';
 
 
 
-
+//Funcion para enviar los datos del formulario
   function enviarDatos() {
+
+    //Recoge los datos del formulario.
     const inputNombre = document.getElementById("Nombre").value;
     const inputStock = document.getElementById("Stock").value;
     const inputCategoria = document.getElementById("Categoria").value;
     const inputTamaño = document.getElementById("Tamaño").value;
   
-    // Check if the inputNombre field is empty
+    //Chequea que el nombre no este vacio.
     if(inputNombre === '') {
         alert('El campo nombre es obligatorio');
         return;
     }
 
-    // Create a FormData object
+    //Crea una variable para los datos del formulario.
     let datos = new FormData();
   
-    // Append the data to the FormData object
+    //Guarda los datos en la VARIABLE datos.
     datos.append("inputNombre", inputNombre);
     datos.append("inputStock", inputStock);
     datos.append("inputCategoria", FormCateg.value);
     datos.append("inputTamaño", inputTamaño);
   
+    //Envia los datos a el php para subir los datos.
     fetch("http://localhost/api/subirprod.php", {
       method: "POST",
       body: datos
@@ -113,7 +143,6 @@ import { RouterLink, useRouter } from 'vue-router';
 
   
 
-//recoje datos en php v
-//$datos = file_get_contents('php://input');
+
 
 </script>
