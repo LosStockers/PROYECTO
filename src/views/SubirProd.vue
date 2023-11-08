@@ -1,170 +1,77 @@
 <template>
+  <v-dialog width="500">
+  <template v-slot:activator="{ props }">
+    <v-btn v-bind="props" text="Subir" width="100" height="50"> </v-btn>
+  </template>
 
-  <div class="izqF">
-    <v-form id="SubirProdF" class="SubirProd">
-     <v-card class="cardProd">
-
-        <v-col>
-          <v-text-field
-            label="Nombre"
-            required 
-            placeholder="Fabuloso"
-            type="text"
-            v-model="NombreForm"
-            class="Formulario"
-            id="Nombre"
-          ></v-text-field>
-
-        </v-col>
-
-        <v-col col="12">
-          <v-text-field
-            label="Stock"
-            placeholder="56u"
-            type="int"
-            v-model="FormStock"
-            class="Formulario"
-            id="Stock"
-          ></v-text-field>
-        </v-col>
-
-        <v-col col="12" >
-          <v-autocomplete
-            label="Categoria"
-            v-model="FormCateg"
-            :items="['Tecnologia', 'Alimentos', 'Bebida', 
-                'Ropa y moda', 'Congelados', 'Enlatados', 
-                'Electricos', 'Limpieza', 'Jugetes', 'Libros', 
-                'Plantas y jardin', 'Decoracion', 'Productos salud', 
-                'Otros']"
-                class="Formulario"
-            id="Categoria"
-          ></v-autocomplete>
-        </v-col>
-
-        <v-col col="8" >
-          <v-text-field
-            label="Tamaño"
-            placeholder="150g"
-            type=""
-            v-model="FormTamaño"
-            class="Formulario"
-            id="Tamaño"
-          ></v-text-field>
-        </v-col>
-
-        <v-card class="Botonera">
-          <v-col
-          cols="12"
-          >
-          <v-btn @Click="enviarDatos()" class="Botones">Subir</v-btn>
+  <template v-slot:default="{ isActive }">
+    <v-card title="Dialog">
+      <v-card-text>
+            <v-container>
+              <v-row>
+               
           
-          <v-btn @Click="conectarDB()" class="Botones">Cancelar</v-btn>
-         </v-col> 
-        </v-card> 
+                <v-col
+                  :cols="coso.columnas"
+                  :sm="coso.sm"
+                  v-for="(coso , index) in cosos"
+                  :key="index"
+                >
+               
+                <v-text-field
+            :v-model="coso.nombre"
+            :type="coso.type"
+            :label="coso.label"
+            required
+            hide-details
+          ></v-text-field>
+          </v-col>
 
+          
+              </v-row>
+            </v-container>
+        cosotroco, son todas iguales ¿?
+      </v-card-text>
+
+      <v-card-actions>
+        <v-spacer></v-spacer>
+
+        <v-btn
+          text="Close Dialog"
+          @click="isActive.value = false"
+        ></v-btn>
+      </v-card-actions>
     </v-card>
-  </v-form>
-</div>
-
-<div class="derP">
-        <div id="DatosMos"  style="display: block;" >
-          <table style="width:100%" justify-content="center">
-            <tr>
-                <th>Nombre</th>
-                <th>Stock</th>
-                <th>Categoria</th>
-                <th>Tamaño</th>
-            </tr>
-            <tr>
-                <td>{{ NombreForm }}</td>
-                <td>{{ FormStock }}</td>
-                <td>{{ FormCateg }}</td>
-                <td>{{ FormTamaño }}</td>
-            </tr>
-          </table>
-        </div>
-
-
-
-</div>
-
-
-  
+  </template>
+</v-dialog>
 </template>
 
-<style scoped>
-  body,
-  html {
-    height: 100%;
-    width: 100%;
-    padding: 0%;
-    margin: 0;
-  }
-
-
-  .SubirProd {
-    
-    margin-left: 2%;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(186, 186, 255);
-  }
-  .cardProd {
-    width: 96%;
-    height: 94%;
-    margin: 2%;
-    top: 2%;
-    bottom: 2%;
-    
-  }
- 
-  .izqF{
-    position: relative;
-    float: left;
-    width: 45%;
-  }
-
-  .derP{
-    position: absolute;
-    right: 45px;
-    top: 300px;
-    width: 45%;
-    
-    background-color: rgb(186, 186, 255)
-  }
-
-  #IMGmos{
-    margin: 5%;
-    float: left ;
-    height: 150px;
-    width: 150px;
-  }
-img {
-    border-style: none;
-    width: 150px;
-}
-
-
-  .Botones {
-    margin-bottom: 3%;
-  }
-  .Botonera{
-    text-align: center;
-    left: 10%;
-    width:80%;
-    justify-content: center;
-  }
-  
-
-
+<style> 
 </style>
 
 
 
+
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+ const cosos = ref([
+ {nombre:"",columnas:12,label:"Email",type:"Email", md:6, sm:12,},
+ {nombre:"",columnas:12,label:"contraseña",type:"password", md:6, sm:12,},
+ 
+
+ ])
+
+
+
+
+
+
+
+
+
+
+
 
 
   const NombreForm = ref("")
