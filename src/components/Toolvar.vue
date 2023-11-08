@@ -22,15 +22,10 @@
         
       </v-btn>
      
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>        
-        <img src="logo emerald stockers.png" alt="logo" id="laimagen"> 
-
-        <v-spacer></v-spacer>
+       
+      
   
-        <v-btn icon>
-          <v-icon>mdi-export</v-icon>
-
-        </v-btn>
+       
       </v-toolbar>
     </div>
   </template>
@@ -53,3 +48,7 @@
   width: 50px;
 }
   </style>
+
+<script setup>
+  const drawer = inject("drawer")
+</script>

@@ -56,6 +56,7 @@
   </template>
 
 <script setup>
+
   
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
@@ -75,6 +76,7 @@ import { RouterLink } from 'vue-router';
 
 
 </script>
+
 <style scoped>
 .Titulito{
   

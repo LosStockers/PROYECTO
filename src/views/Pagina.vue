@@ -11,7 +11,6 @@
 
             <img v-if="imageurl==null" src="image.png" class="sinImagen" alt="Imagen Predefinida" style="" >
             <img v-if="imageurl" :src="imageurl" >
-
           </div>
 
           <div id="DatosMos" class="columna"  style="display: block;" >
@@ -37,6 +36,7 @@
   </v-app>
 </template>
 
+sc
 <script setup>
 import { ref } from 'vue';
 
