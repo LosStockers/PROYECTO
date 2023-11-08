@@ -42,16 +42,7 @@
           ></v-autocomplete>
         </v-col>
 
-        <v-col col="8" >
-          <v-text-field
-            label="Tamaño"
-            placeholder="150g"
-            type=""
-            v-model="FormTamaño"
-            class="Formulario"
-            id="Tamaño"
-          ></v-text-field>
-        </v-col>
+
 
         <v-card class="Botonera">
           <v-col
@@ -80,7 +71,6 @@
                 <td>{{ NombreForm }}</td>
                 <td>{{ FormStock }}</td>
                 <td>{{ FormCateg }}</td>
-                <td>{{ FormTamaño }}</td>
             </tr>
           </table>
         </div>
@@ -167,6 +157,7 @@ img {
 import { ref } from 'vue'
 
 
+//Recoje los datos ingresados del formulario y los muestra en la tabla.
   const NombreForm = ref("")
   const FormStock = ref("")
   const FormCateg = ref("")
@@ -176,28 +167,31 @@ import { ref } from 'vue'
 
 
 
-
+//Funcion para enviar los datos del formulario
   function enviarDatos() {
+
+    //Recoge los datos del formulario.
     const inputNombre = document.getElementById("Nombre").value;
     const inputStock = document.getElementById("Stock").value;
     const inputCategoria = document.getElementById("Categoria").value;
     const inputTamaño = document.getElementById("Tamaño").value;
   
-    // Check if the inputNombre field is empty
+    //Chequea que el nombre no este vacio.
     if(inputNombre === '') {
         alert('El campo nombre es obligatorio');
         return;
     }
 
-    // Create a FormData object
+    //Crea una variable para los datos del formulario.
     let datos = new FormData();
   
-    // Append the data to the FormData object
+    //Guarda los datos en la VARIABLE datos.
     datos.append("inputNombre", inputNombre);
     datos.append("inputStock", inputStock);
     datos.append("inputCategoria", FormCateg.value);
     datos.append("inputTamaño", inputTamaño);
   
+    //Envia los datos a el php para subir los datos.
     fetch("http://localhost/api/subirprod.php", {
       method: "POST",
       body: datos
@@ -206,7 +200,6 @@ import { ref } from 'vue'
 
   
 
-//recoje datos en php v
-//$datos = file_get_contents('php://input');
+
 
 </script>
