@@ -5,6 +5,7 @@
         <Drawer/>
         
     </v-app>
+    <Drawer/>
     <Footer/>
 </template>
 

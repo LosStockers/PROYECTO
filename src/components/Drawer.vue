@@ -19,7 +19,7 @@
       <v-layout>
 </template>
 <script setup>
-import { ref } from "vue";
+import { inject } from "vue";
 
-const drawer = ref(false)
+const drawer = inject("drawer")
 </script>

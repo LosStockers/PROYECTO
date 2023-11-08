@@ -22,7 +22,7 @@
         
       </v-btn>
      
-       
+     
       
   
        
@@ -30,7 +30,8 @@
     </div>
   </template>
 <script setup>
-  import { ref } from "vue"
+  const drawer = inject ("drawer")
+  import { inject, ref } from "vue"
   
   const esmerald = ref("emerald.png")
 </script>
@@ -49,6 +50,3 @@
 }
   </style>
 
-<script setup>
-  const drawer = inject("drawer")
-</script>
