@@ -39,10 +39,12 @@
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Crear Cuenta</h4>
                   </v-btn>
+                  <Router-Link to="/login">
                   <v-btn  prepend-icon   class="btn_cuenta1 mr-5" @click="Iniciar"  >
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
+                  </Router-Link>
                 </v-col>
               </v-row>
             </v-container>
@@ -96,7 +98,7 @@ import { RouterLink } from 'vue-router';
 }
 
 .btn_cuenta1{
-  margin-left:60% ;
+  margin-left:290% ;
 }
 
 </style>
