@@ -34,11 +34,15 @@ const routes = [
         name: '/Pagina',
         component: () => import ('@/views/Pagina.vue')
       },
-
       {
-        path: '/Login2.vue',
-        name: '/Login2.vue',
-        component: () => import ('@/views/Login2.vue')
+        path: '/paginaprincipal.vue',
+        name: '/paginaprincipal.vue',
+        component: () => import ('@/views/paginaprincipal.vue')
+      },
+      {
+        path: '/p',
+        name: '/p',
+        component: () => import ('@/views/pppp.vue')
       }
     ],
   },
