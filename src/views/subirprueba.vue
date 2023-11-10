@@ -74,7 +74,6 @@
   </v-app>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -93,6 +92,7 @@ export default {
       filteredProductTypes: [],
       errorSnackbar: false,
       errorMessage: '',
+      status: '',
     };
   },
   computed: {
@@ -139,12 +139,13 @@ export default {
       // Aquí puedes realizar la lógica para descargar productos con la cantidad especificada
       console.log('Producto seleccionado para descarga:', this.selectedProductForDownload);
       console.log('Cantidad a descargar:', -Math.abs(this.quantityToDownload)); // Convertir a número negativo
+      console.log('Estado del Producto:', this.status);
       this.closeDownloadDialog();
     },
     isImageValid(file) {
-      if (!file) return false;
-      const validFormats = ['image/png', 'image/jpeg', 'image/jpg'];
-      return validFormats.includes(file.type);
+    if (!file) return false;
+    const validFormats = ['.png', '.jpeg'];
+    return validFormats.includes(file.type);
     },
     filterProductTypes(query) {
       this.filteredProductTypes = this.productTypes.filter(type =>

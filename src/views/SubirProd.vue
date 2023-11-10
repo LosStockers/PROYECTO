@@ -1,148 +1,167 @@
 <template>
-  <v-dialog width="500">
-  <template v-slot:activator="{ props }">
-    <v-btn v-bind="props" text="Subir" width="100" height="50"> </v-btn>
-  </template>
-
-  <template v-slot:default="{ isActive }">
-    <v-card title="Dialog">
-      <v-card-text>
-            <v-container>
-              <v-row>
-               
-          
-                <v-col
-                  :cols="coso.columnas"
-                  :sm="coso.sm"
-                  v-for="(coso , index) in cosos"
-                  :key="index"
-                >
-               
-                <v-text-field
-            :v-model="coso.nombre"
-            :type="coso.type"
-            :label="coso.label"
-            required
-            hide-details
-          ></v-text-field>
+  <v-app>
+    <v-main>
+      <v-container>
+        <v-row>
+          <v-col cols="6">
+            <v-btn @click="openDialog">Subir</v-btn>
+            <v-dialog v-model="dialog" max-width="500">
+              <v-card>
+                <v-card-title>Subir Producto</v-card-title>
+                <v-card-text>
+                  <v-form @submit.prevent="submitForm">
+                    <v-autocomplete
+                      v-model="selectedProduct"
+                      :items="combinedProducts"
+                      label="Seleccionar Producto"
+                      autocomplete
+                    ></v-autocomplete>
+                    <v-text-field v-if="selectedProduct === 'Nuevo Producto'" v-model="newProductName" label="Nombre"></v-text-field>
+                    <v-autocomplete
+                      v-if="selectedProduct === 'Nuevo Producto'"
+                      v-model="newProductType"
+                      :items="filteredProductTypes"
+                      label="Tipo de Producto"
+                      clearable
+                      @input="filterProductTypes"
+                    ></v-autocomplete>
+                    <v-file-input
+                      v-if="selectedProduct === 'Nuevo Producto'"
+                      v-model="newProductImage"
+                      label="Imagen"
+                      accept=".png, .jpeg, .jpg"
+                    ></v-file-input>
+                    <v-text-field v-model="quantity" label="Cantidad" type="number"></v-text-field>
+                  </v-form>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn @click="closeDialog">Cancelar</v-btn>
+                  <v-btn color="primary" @click="submitForm">Guardar</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+            <v-btn @click="openDownloadDialog">Bajar</v-btn>
+            <v-dialog v-model="downloadDialog" max-width="500">
+              <v-card>
+                <v-card-title>Descargar Producto</v-card-title>
+                <v-card-text>
+                  <v-form @submit.prevent="submitDownloadForm">
+                    <v-select
+                      v-model="selectedProductForDownload"
+                      :items="combinedProducts"
+                      label="Seleccionar Producto"
+                      autocomplete
+                    ></v-select>
+                    <v-text-field v-model="quantityToDownload" label="Cantidad" type="number"></v-text-field>
+                    <v-select
+                      v-model="status"
+                      :items="['Vendido', 'Descartado']"
+                      label="Estado del Producto"
+                    ></v-select>
+                  </v-form>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn @click="closeDownloadDialog">Cancelar</v-btn>
+                  <v-btn color="primary" @click="submitDownloadForm">Descargar</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+            <v-snackbar v-model="errorSnackbar" color="error">{{ errorMessage }}</v-snackbar>
           </v-col>
-
-          
-              </v-row>
-            </v-container>
-        cosotroco, son todas iguales ¿?
-      </v-card-text>
-
-      <v-card-actions>
-        <v-spacer></v-spacer>
-
-        <v-btn
-          text="Close Dialog"
-          @click="isActive.value = false"
-        ></v-btn>
-      </v-card-actions>
-    </v-card>
-  </template>
-</v-dialog>
-  </v-form>
-</div>
-
-<div class="derP">
-        <div id="DatosMos"  style="display: block;" >
-          <table style="width:100%" justify-content="center">
-            <tr>
-                <th>Nombre</th>
-                <th>Stock</th>
-                <th>Categoria</th>
-                <th>Tamaño</th>
-            </tr>
-            <tr>
-                <td>{{ NombreForm }}</td>
-                <td>{{ FormStock }}</td>
-                <td>{{ FormCateg }}</td>
-            </tr>
-          </table>
-        </div>
-
-
-
-</div>
-
-
-  
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
-<style> 
-</style>
 
 
 
-
-<script setup>
+<script>
 import { ref } from 'vue';
-import { RouterLink, useRouter } from 'vue-router';
- const cosos = ref([
- {nombre:"",columnas:12,label:"Email",type:"Email", md:6, sm:12,},
- {nombre:"",columnas:12,label:"contraseña",type:"password", md:6, sm:12,},
- 
-
- ])
+import { useRoute } from 'vue-router';
+import func from 'vue-temp/vue-editor-bridge';
 
 
 
-
-
-
-
-
-
-
-
-
-
-//Recoje los datos ingresados del formulario y los muestra en la tabla.
-  const NombreForm = ref("")
-  const FormStock = ref("")
-  const FormCateg = ref("")
-  const FormTamaño = ref("")
-
-  
-
-
-
-//Funcion para enviar los datos del formulario
-  function enviarDatos() {
-
-    //Recoge los datos del formulario.
-    const inputNombre = document.getElementById("Nombre").value;
-    const inputStock = document.getElementById("Stock").value;
-    const inputCategoria = document.getElementById("Categoria").value;
-    const inputTamaño = document.getElementById("Tamaño").value;
-  
-    //Chequea que el nombre no este vacio.
-    if(inputNombre === '') {
-        alert('El campo nombre es obligatorio');
-        return;
+  data( {
+    {
+      dialog: false,
+      downloadDialog: false,
+      selectedProduct: '',
+      selectedProductForDownload: '',
+      newProductName: '',
+      newProductType: '',
+      newProductImage: null,
+      quantity: 0,
+      quantityToDownload: 0,
+      products: ['Producto 1', 'Producto 2', 'Nuevo Producto'],
+      productTypes: ['Comida', 'Electrónica', 'Ropa', 'Muebles', 'Juguetes', 'Herramientas'],
+      filteredProductTypes: [],
+      errorSnackbar: false,
+      errorMessage: '',
+      status: '',
     }
-
-    //Crea una variable para los datos del formulario.
-    let datos = new FormData();
-  
-    //Guarda los datos en la VARIABLE datos.
-    datos.append("inputNombre", inputNombre);
-    datos.append("inputStock", inputStock);
-    datos.append("inputCategoria", FormCateg.value);
-    datos.append("inputTamaño", inputTamaño);
-  
-    //Envia los datos a el php para subir los datos.
-    fetch("http://localhost/api/subirprod.php", {
-      method: "POST",
-      body: datos
-    });
-}
+  })
+  {
+   combinedProducts() {
+      // Combinar las opciones de productos existentes y los tipos de productos
+      return [...this.products, ...this.productTypes];
+    },
+  },
 
   
+ 
+   const openDialog = ref("this.dialog = true");
+      
+  
+    closeDialog() {
+      this.dialog = false;
+    },
+    openDownloadDialog() {
+      this.downloadDialog = true;
+    },
+    closeDownloadDialog() {
+      this.downloadDialog = false;
+    },
+    submitForm() {
+      if (this.selectedProduct === 'Nuevo Producto' && !this.isImageValid(this.newProductImage)) {
+        this.errorSnackbar = true;
+        this.errorMessage = 'El formato de la imagen no es válido. Debe ser PNG, JPEG o JPG.';
+        return;
+      }
 
+      if (this.quantity < 0) {
+        this.errorSnackbar = true;
+        this.errorMessage = 'La cantidad no puede ser un número negativo.';
+        return;
+      }
 
+      // Aquí puedes realizar la lógica para guardar los datos del formulario de subida
+      console.log('Producto seleccionado:', this.selectedProduct);
+      console.log('Nombre:', this.newProductName);
+      console.log('Tipo de Producto:', this.newProductType);
+      console.log('Imagen:', this.newProductImage);
+      console.log('Cantidad:', this.quantity);
+      this.closeDialog();
+    },
+    submitDownloadForm() {
+      // Aquí puedes realizar la lógica para descargar productos con la cantidad especificada
+      console.log('Producto seleccionado para descarga:', this.selectedProductForDownload);
+      console.log('Cantidad a descargar:', -Math.abs(this.quantityToDownload)); // Convertir a número negativo
+      console.log('Estado del Producto:', this.status);
+      this.closeDownloadDialog();
+    },
+    isImageValid(file) {
+    if (!file) return false;
+    const validFormats = ['.png', '.jpeg'];
+    return validFormats.includes(file.type);
+    },
+    filterProductTypes(query) {
+      this.filteredProductTypes = this.productTypes.filter(type =>
+        type.toLowerCase().includes(query.toLowerCase())
+      );
+    },
+  
 
 </script>
