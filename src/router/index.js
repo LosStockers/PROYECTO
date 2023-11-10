@@ -19,6 +19,11 @@ const routes = [
         name: 'subir',
         component: () => import('@/views/SubirProd.vue')
       },
+      {   
+      path: '/subirpru',
+      name: 'prod',
+      component: () => import('@/views/subirprueba.vue')
+    },
       {
         path: '/login',
         name: 'Login',
