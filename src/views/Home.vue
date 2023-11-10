@@ -39,7 +39,7 @@
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Crear Cuenta</h4>
                   </v-btn>
-                  <v-btn  prepend-icon   class="btn_cuenta mr-5" @click="Iniciar"  >
+                  <v-btn  prepend-icon   class="btn_cuenta1 mr-5" @click="Iniciar"  >
                   <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
@@ -56,6 +56,7 @@
   </template>
 
 <script setup>
+
   
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
@@ -75,6 +76,7 @@ import { RouterLink } from 'vue-router';
 
 
 </script>
+
 <style scoped>
 .Titulito{
   
@@ -91,6 +93,10 @@ import { RouterLink } from 'vue-router';
  
   width: 20px;
   height: 20px;
+}
+
+.btn_cuenta1{
+  margin-left:60% ;
 }
 
 </style>

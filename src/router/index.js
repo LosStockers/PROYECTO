@@ -35,11 +35,15 @@ const routes = [
         component: () => import ('@/views/Pagina.vue')
       },
       {
-        path: '/PapasHelado',
-        name: '/PapasHelado',
-        component: () => import ('@/views/Pagina.vue')
+        path: '/paginaprincipal.vue',
+        name: '/paginaprincipal.vue',
+        component: () => import ('@/views/paginaprincipal.vue')
       },
-
+      {
+        path: '/p',
+        name: '/p',
+        component: () => import ('@/views/pppp.vue')
+      }
     ],
   },
 ]
