@@ -62,10 +62,9 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
  const cosos = ref([
  {nombre:"",columnas:12,label:"Nombre", md:6, sm:6},
- {nombre:"",columnas:12,label:"Apellido", md:6, sm:6,},
  {nombre:"",columnas:12,label:"Email",type:"Email", md:6, sm:12,},
- {nombre:"",columnas:12,label:"contraseña",type:"password", md:6, sm:12,},
- {nombre:"",columnas:12,label:"Repetir Contraseña",type:"password", md:6, sm:12,},
+ {nombre:"",columnas:12,label:"contraseña",type:"password", md:6, sm:6,},
+ {nombre:"",columnas:12,label:"Repetir Contraseña",type:"password", md:6, sm:6,},
 
  ])
 
