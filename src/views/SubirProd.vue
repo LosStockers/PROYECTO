@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    {{ filteredProductTypes }}
     <v-main>
       <v-container>
         <v-row>
@@ -20,11 +21,14 @@
                     <v-autocomplete
                       v-if="selectedProduct === 'Nuevo Producto'"
                       v-model="newProductType"
-                      :items="filteredProductTypes"
+                      :items="filteredProductTypes.tipo"
                       label="Tipo de Producto"
                       clearable
                       @input="filterProductTypes"
-                    ></v-autocomplete>
+                    >
+                  
+                  </v-autocomplete>
+                   
                     <v-file-input
                       v-if="selectedProduct === 'Nuevo Producto'"
                       v-model="newProductImage"
@@ -77,91 +81,99 @@
 
 
 
-<script>
-import { ref } from 'vue';
+<script setup>
+import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import func from 'vue-temp/vue-editor-bridge';
+
+const dialog = ref(false)
+const downloadDialog =ref (false)
+const selectedProduct = ref("")
+const selectedProductForDownload = ref("")
+const newProductName = ref("")
+const newProductType = ref([])
+const newProductImage = ref(null)
+const quantity = ref(0)
+const quantityToDownload = ref(0)
+const products = ref(['Producto 1', 'Producto 2', 'Nuevo Producto'])
+const productTypes = ref(['Comida', 'Electrónica', 'Ropa', 'Muebles', 'Juguetes', 'Herramientas'])
+const filteredProductTypes = ref("")
+const errorSnackbar = ref(false)
+const errorMessage = ref("")
+const status = ref("")
+
+const tipos = async() => {
+  await fetch("http://localhost/api/Traertipos.php")
+  .then(respuesta => respuesta.json())
+  .then(datos => filteredProductTypes.value=datos)        
+}
+
+tipos()
 
 
+const  combinedProducts = computed(
+  ()=>{
+   return [...products.value, ...productTypes.value]
+  }
+)
 
-  data( {
-    {
-      dialog: false,
-      downloadDialog: false,
-      selectedProduct: '',
-      selectedProductForDownload: '',
-      newProductName: '',
-      newProductType: '',
-      newProductImage: null,
-      quantity: 0,
-      quantityToDownload: 0,
-      products: ['Producto 1', 'Producto 2', 'Nuevo Producto'],
-      productTypes: ['Comida', 'Electrónica', 'Ropa', 'Muebles', 'Juguetes', 'Herramientas'],
-      filteredProductTypes: [],
-      errorSnackbar: false,
-      errorMessage: '',
-      status: '',
+   const openDialog=()=> {
+      dialog.value = true;
     }
-  })
-  {
-   combinedProducts() {
-      // Combinar las opciones de productos existentes y los tipos de productos
-      return [...this.products, ...this.productTypes];
-    },
-  },
-
-  
- 
-   const openDialog = ref("this.dialog = true");
-      
-  
-    closeDialog() {
-      this.dialog = false;
-    },
-    openDownloadDialog() {
-      this.downloadDialog = true;
-    },
-    closeDownloadDialog() {
-      this.downloadDialog = false;
-    },
-    submitForm() {
-      if (this.selectedProduct === 'Nuevo Producto' && !this.isImageValid(this.newProductImage)) {
-        this.errorSnackbar = true;
-        this.errorMessage = 'El formato de la imagen no es válido. Debe ser PNG, JPEG o JPG.';
-        return;
+  const  closeDialog=()=> {
+      dialog.value = false
+    }
+   const openDownloadDialog=()=> {
+      downloadDialog.value = true;
+    }
+    const closeDownloadDialog=()=> {
+    downloadDialog.value = false;
+    }
+    const submitForm=()=> {
+      if (selectedProduct.value === 'Nuevo Producto') {
+        console.log(newProductImage.value[0].type)
+        if (!(isImageValid.value(newProductImage.value[0]))) {
+          
+          errorSnackbar.value = true;
+          errorMessage.value = 'El formato de la imagen no es válido. Debe ser PNG, JPEG o JPG.';
+            
+        }
+        
       }
+    
 
-      if (this.quantity < 0) {
-        this.errorSnackbar = true;
-        this.errorMessage = 'La cantidad no puede ser un número negativo.';
-        return;
+      if (quantity.value < 0) {
+        errorSnackbar.value = true;
+        errorMessage.value = 'La cantidad no puede ser un número negativo.';
+        
       }
 
       // Aquí puedes realizar la lógica para guardar los datos del formulario de subida
-      console.log('Producto seleccionado:', this.selectedProduct);
-      console.log('Nombre:', this.newProductName);
-      console.log('Tipo de Producto:', this.newProductType);
-      console.log('Imagen:', this.newProductImage);
-      console.log('Cantidad:', this.quantity);
-      this.closeDialog();
+      console.log('Producto seleccionado:', selectedProduct.value);
+      console.log('Nombre:', newProductName.value);
+      console.log('Tipo de Producto:', newProductType.value);
+      console.log('Imagen:', newProductImage.value);
+      console.log('Cantidad:', quantity.value);
+      closeDialog();
     },
-    submitDownloadForm() {
+    submitDownloadForm=()=> {
       // Aquí puedes realizar la lógica para descargar productos con la cantidad especificada
-      console.log('Producto seleccionado para descarga:', this.selectedProductForDownload);
-      console.log('Cantidad a descargar:', -Math.abs(this.quantityToDownload)); // Convertir a número negativo
-      console.log('Estado del Producto:', this.status);
-      this.closeDownloadDialog();
+      console.log('Producto seleccionado para descarga:', selectedProductForDownload.value);
+      console.log('Cantidad a descargar:', -Math.abs(quantityToDownload.value)); // Convertir a número negativo
+      console.log('Estado del Producto:', status.value);
+      closeDownloadDialog();
     },
-    isImageValid(file) {
+
+    isImageValid=(file)=> {
     if (!file) return false;
-    const validFormats = ['.png', '.jpeg'];
+    const validFormats = ['image/png', 'image/jpeg','image/jpg'];
+    console.log(":(" + file.name)
     return validFormats.includes(file.type);
     },
-    filterProductTypes(query) {
-      this.filteredProductTypes = this.productTypes.filter(type =>
+    filterProductTypes=(query)=> {
+      filteredProductTypes.value = productTypes.value.filter(type =>
         type.toLowerCase().includes(query.toLowerCase())
       );
-    },
+    }
   
 
 </script>
