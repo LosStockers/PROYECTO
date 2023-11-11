@@ -33,19 +33,21 @@
             hide-details
           ></v-text-field>
           </v-col>
-
-          <v-checkbox label="Guardar Sesion"></v-checkbox>
+           <v-checkbox label="Guardar Sesion" class="cajitachecar"></v-checkbox>
+          
                 <v-col class="columna">
                   <v-btn  prepend-icon   class="btn_cuenta mr-4" >
                   <img :src="tuerca" class="imagen mr-2">
-                  <h4 class="texto">Crear Cuenta</h4>
-                  </v-btn>
-                  <v-btn  prepend-icon   class="btn_cuenta1 mr-5" >
-                  <img :src="tuerca" class="imagen mr-2">
                   <h4 class="texto">Iniciar Sesión</h4>
                   </v-btn>
-                
-                </v-col>
+                  <Router-Link to="/">
+                  <v-btn  prepend-icon   class="btn_cuenta1 mr-5" >
+                  <img :src="tuerca" class="imagen mr-2">
+                  <h4 class="texto">Crear Cuenta</h4>
+                  </v-btn>
+                  </Router-Link>
+                  </v-col>
+                  
               </v-row>
             </v-container>
           </v-card-text>
@@ -93,4 +95,22 @@ import { RouterLink, useRouter } from 'vue-router';
   height: 20px;
 }
 
+.cajitachecar{
+  margin-top: -0%;
+  margin-right: 60%;
+  margin-left: 1%;
+}
+
+.btn_cuenta{
+margin-right: 80%;
+margin-top: -3%;
+
+}
+
+.btn_cuenta1{
+  margin-left: 300%;
+  margin-top: -21%;
+}
+
 </style>
+
