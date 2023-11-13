@@ -5,8 +5,8 @@
       <v-container>
         <v-row>
           <v-col cols="6">
-            <v-btn @click="openDialog">Subir</v-btn>
-            <v-dialog v-model="dialog" max-width="500">
+            <v-btn @click="openDialogEntrada">Subir</v-btn>
+            <v-dialog v-model="dialogEntrada" max-width="500">
               <v-card>
                 <v-card-title>Subir Producto</v-card-title>
                 <v-card-text>
@@ -44,8 +44,10 @@
                 </v-card-actions>
               </v-card>
             </v-dialog>
-            <v-btn @click="openDownloadDialog">Bajar</v-btn>
-            <v-dialog v-model="downloadDialog" max-width="500">
+
+            
+            <v-btn @click="openDialogSalida">Bajar</v-btn>
+            <v-dialog v-model="dialogSalida" max-width="500">
               <v-card>
                 <v-card-title>Descargar Producto</v-card-title>
                 <v-card-text>
@@ -85,8 +87,8 @@
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
-const dialog = ref(false)
-const downloadDialog =ref (false)
+const dialogEntrada = ref(false)
+const dialogSalida = ref(false)
 const selectedProduct = ref("")
 const selectedProductForDownload = ref("")
 const newProductName = ref("")
@@ -94,16 +96,16 @@ const newProductType = ref([])
 const newProductImage = ref(null)
 const quantity = ref(0)
 const quantityToDownload = ref(0)
-const products = ref(['Producto 1', 'Producto 2', 'Nuevo Producto'])
+const products = ref(['Nuevo Producto'])
 const productTypes = ref(['Comida', 'Electrónica', 'Ropa', 'Muebles', 'Juguetes', 'Herramientas'])
-const filteredProductTypes = ref("")
+const filteredProductTypes = ref([])
 const errorSnackbar = ref(false)
 const errorMessage = ref("")
 const status = ref("")
 
 const tipos = async() => {
   await fetch("http://localhost/api/Traertipos.php")
-  .then(respuesta => respuesta.json())
+  .then(respuesta => respuesta.json())  
   .then(datos => filteredProductTypes.value=datos)        
 }
 
@@ -113,20 +115,20 @@ tipos()
 const  combinedProducts = computed(
   ()=>{
    return [...products.value, ...productTypes.value]
-  }
+  } 
 )
 
-   const openDialog=()=> {
-      dialog.value = true;
+   const openDialogEntrada=()=> {
+      dialogEntrada.value = true;
     }
   const  closeDialog=()=> {
-      dialog.value = false
+      dialogEntrada.value = false
     }
-   const openDownloadDialog=()=> {
-      downloadDialog.value = true;
+   const openDialogSalida=()=> {
+      dialogSalida.value = true;
     }
     const closeDownloadDialog=()=> {
-    downloadDialog.value = false;
+    dialogSalida.value = false;
     }
     const submitForm=()=> {
       if (selectedProduct.value === 'Nuevo Producto') {
